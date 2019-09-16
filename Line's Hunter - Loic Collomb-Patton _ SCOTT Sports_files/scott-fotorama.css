@@ -1,0 +1,534 @@
+/* CUSTOMIZE GALLERY
+-------------------------------------------------- */
+#galerie .fotorama__stage__frame, #galerie .fotorama__wrap--slide {
+	background: none;
+}
+.detailpictures .fotorama__nav-wrap,
+.detailpictures .fotorama__wrap--slide .fotorama__stage__frame{
+	background: #fff;
+}
+.detailpictures .fotorama__wrap--slide .fotorama__stage__frame.fotorama__error{
+	background: none;
+	background-image: url("/site/images/no-product-image-available.png");
+	background-size: contain;
+	cursor:default;
+}
+#galerie .fotorama__nav-wrap{
+	position: relative;
+    margin-top: 20px;
+    color:#000;
+    z-index:0;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.slider-wrap{
+	position: relative;
+}
+.slider-wrap h1,
+.slider-wrap h3{
+	color: #FFFFFF;
+}
+.slider-wrap .btn{
+	margin: 20px 0
+}
+.slider-wrap img{
+	width:100%;
+}
+.slider-wrap .container{
+	position:relative;
+	height: 100%;
+}
+.slider-wrap .addthis_toolbox {
+	position:absolute;
+	bottom:20px;
+	right:0;
+}
+.slider-wrap .addthis_toolbox a{
+   	border: none;
+		padding: 4px 3px 2px 6px;
+}
+.slider-wrap .fotorama__nav-wrap{
+	position: relative;
+    margin-top: -31px;
+    color:#FFFFFF;
+    z-index:0;
+}
+.slider-wrap .fotorama__wrap *{
+	box-sizing: border-box;
+}
+
+.slider-wrap .fotorama__caption__wrap{
+	display: block;
+	bottom: 0;
+	top: 0;
+	height: 100%;
+}
+.slider-wrap .fotorama__caption__wrap a{
+	border: none;
+}
+.slider-wrap .fotorama__caption{
+	bottom: 0;
+	top: 0;
+}
+.slider-wrap .notitre{
+ position:absolute;
+ bottom:30px;
+ left:0;
+}
+.fotorama__active .fotorama__dot {
+	background-color: #0099ff;
+}
+.fotorama__dot {
+	border: none;
+	background-color: #ffffff;
+}
+.fotorama__video-play {
+	z-index: 100
+}
+
+
+#productdetail .fotorama__active .fotorama__dot {
+	background-color: #0099ff;
+}
+#productdetail .fotorama__dot {
+	border: none;
+	background-color: #5E5E5E;
+}
+#productdetail .fotorama__dot {
+	border: none;
+	background-color: #5E5E5E;
+}
+
+
+
+/* fotorama Custome thumbs
+---------------------------------------------------------------------- */
+
+#content_detail #fotoramacustomthumbs #news {
+	margin-bottom: 20px;
+}
+#content_detail #fotoramacustomthumbs .icon{
+	bottom: 75px;
+}
+#fotoramacustomthumbs .fotorama__wrap--slide .fotorama__stage__frame {
+	background: #F7F7F7;
+}
+#fotoramacustomthumbs .thumbs {
+	text-align: center;
+	margin-top: 2px;
+	font-size: 1px;
+	line-height: 1;
+	height: 70px;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+}
+
+#fotoramacustomthumbs .thumbs a {
+	visibility: visible;
+	text-decoration: none;
+	color: #34457b;
+}
+#fotoramacustomthumbs .thumbs a:hover {
+	color: #af1d05;
+}
+#fotoramacustomthumbs .thumbs img{
+	width: auto;
+	height: 70px;
+	border: 2px #fff solid;
+	opacity: .75;
+	transition: opacity .5s;
+}
+#fotoramacustomthumbs .thumbs a.active img {
+	border-color: #00afea;
+	opacity: 1;
+	transition: none;
+}
+#fotoramacustomthumbs .thumbs a:hover img{
+	opacity: 1;
+}
+#fotoramacustomthumbs .icon{
+	border: 1px #0099FF solid;
+	background-color: #FFFFFF;
+	padding: 10px 10px 7px 10px;
+	color: #0099FF !important;
+	opacity: 0.75;
+}
+
+#fotoramacustomthumbs .icon.left{
+	position:relative;
+	left:-8px;
+	bottom: 55px;
+	float: left;
+}
+#fotoramacustomthumbs .icon.right{
+	position:relative;
+	right:-8px;
+	bottom: 55px;
+	float: right;
+}
+
+
+.fotorama__wrap{
+	position: relative;
+}
+.fotoramaprogress{
+   	background: #09f;
+   	height: 5px;
+   	width: 0%;
+	position:absolute;
+	bottom:0px;
+}
+.fotoramastartstop{
+	cursor: pointer;
+}
+.fotoramacontrols{
+	display: none;
+}
+.fotoramastartstop{
+	position:absolute;
+	top:auto;
+	bottom:13px;
+	z-index:100
+}
+.fotoramacontrols a {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 10%;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.fotoramacontrols a:hover{
+    opacity: 1;
+}
+.fotoramacontrols a.right {
+   right: 0px;
+	background-repeat: repeat-x;
+}
+.fotoramacontrols a.left {
+   left: 0px;
+	background-repeat: repeat-x;
+}
+.fotoramacontrols a.left:hover{
+	transition: opacity 0.25s ease-in-out;
+	-moz-transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.25s ease-in-out;
+
+}
+.fotoramacontrols a.right:hover {
+	transition: opacity 0.25s ease-in-out;
+	-moz-transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.25s ease-in-out;
+}
+
+.fotoramacontrols a span{
+	top: 50%;
+	position: absolute;
+	font-size: 60px;
+	margin-top: -40px;
+	right:0;
+	left:0
+}
+/*
+.fotorama__nav {
+    thumbheight + thumbmargin * 2 + controlheight = 64 + 2 * 2 + 40 = 108
+    height: 108px; ?????
+} */
+.fotorama__nav:after,
+.fotorama__nav:before {
+    bottom: 40px;
+}
+.fotorama-control {
+    height: 40px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+    display: none;
+    background-color: red; /* just for debugging */
+}
+.fotorama--fullscreen .fotorama__nav{
+	background: none;
+}
+
+
+
+
+/* Fotorama
+---------------------------------------------------------------------- */
+
+.fotorama__caption__wrap {
+	background-color:transparent !important;
+}
+.fotorama__wrap--slide .fotorama__stage__frame {
+	opacity: 1 !important;
+	background: #000;
+}
+#news .fotorama__wrap--slide .fotorama__stage__frame {
+	background: #F7F7F7;
+}
+.fotorama__dot {
+	display: block;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	top: 0;
+	left: 8px;
+	border-radius: 8px;
+	border: 1px solid #ffffff
+}
+
+.fotorama__nav__frame.fotorama__active .fotorama__dot {
+width: 10px;
+height: 10px;
+border-width: 1px;
+border-color: #09f;
+}
+
+.fotorama__fullscreen-icon:before {
+	font-family: "Font Awesome 5 Pro";
+	content: "\f00e";
+	font-size: 30px;
+	font-weight:  normal;
+	padding:10px;
+}
+.fotorama--fullscreen .fotorama__fullscreen-icon:before {
+	font-family: "Font Awesome 5 Pro";
+	content: "\f010";
+}
+.fotorama__stage .fotorama__fullscreen-icon {
+	width: 50px;
+	height: 50px;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	opacity:0.3;
+}
+.fotorama--fullscreen .fotorama__stage .fotorama__fullscreen-icon {
+	top: 20px;
+	bottom: auto;
+	width: 50px;
+	height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.fotorama--fullscreen .fotorama__stage .fotorama__fullscreen-icon:before {
+	font-size: 40px;
+}
+
+.fotorama__fullscreen-icon {
+	top: 0;
+	right: 0;
+	bottom: auto;
+}
+
+.fotorama__video-play {
+	width: 60px;
+	height: 60px;
+	border: 0 !important;
+}
+.fotorama__video-play:before {
+	font-family: "Font Awesome 5 Pro";
+	content: "\f144";
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 51px;
+	color: #09f;
+	padding: 3px;
+}
+#galerie .fotorama__video-play:before {
+	line-height: 65px;
+	padding: 8px;
+}
+
+
+.fotorama__video-close:before {
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 500;
+	content: "\f00d";
+	font-size: 30px;
+   	color: #09f;
+}
+.teamdetailcontent .detailpictures.fotorama .fotorama__stage__frame,
+.athletedetailcontent .detailpictures.fotorama .fotorama__stage__frame,
+#content_detail .detailpictures.fotorama .fotorama__stage__frame{
+	cursor:hand;
+	background: #fff !important;
+}
+.detailpictures.fotorama.fotorama--fullscreen .fotorama__stage__frame{
+	background: #fff !important;
+}
+.fotorama__arr,
+.fotorama__fullscreen-icon,
+.fotorama__video-close,
+.fotorama__video-play {
+	background: none;
+}
+
+@media ( -webkit-min-device-pixel-ratio :1.5) , ( min-resolution :2dppx){
+	.fotorama__arr,
+	.fotorama__fullscreen-icon,
+	.fotorama__video-close,
+	.fotorama__video-play {
+		background: none;
+	}
+
+	.detailpictures .fotorama__arr{
+		background: none;
+	}
+}
+.fotorama__arr {
+	background: none;
+	font-size:20px;
+    right: 00px;
+    padding-left: 10px;
+    padding-right: 10px;
+	color:#fff;
+	margin-top: 0;
+}
+.detailpictures .fotorama__arr {
+	font-size:30px;
+    right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+	color:#999
+}
+.fotorama__arr:hover {
+	color:#09f
+}
+.fotorama--fullscreen .fotorama__arr--prev,
+.fotorama--fullscreen .fotorama__arr--next {
+	font-size:60px;
+    right: 2px;
+    height: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+.fotorama__arr--next:before{
+	font-family: "Font Awesome 5 Pro";
+	content: "\f054";
+}
+.fotorama__arr--prev:before{
+	font-family: "Font Awesome 5 Pro";
+	content: "\f053";
+}
+.fotorama__thumb-border {
+	border-color: #999;
+}
+
+.fotorama__fullscreen-icon{
+	background: none !important;
+	color: #ccc;
+	opacity:1 !important;
+}
+.fotorama__wrap--css3 .fotorama__fullscreen-icon:hover,
+.detailpictures .fotorama__wrap--css3:hover .fotorama__fullscreen-icon,
+#galerie .fotorama__wrap--css3:hover .fotorama__fullscreen-icon {
+	color: #09f;
+}
+.fotorama__wrap--css3.fotorama__wrap--no-controls.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__fullscreen-icon:not(:focus){
+	-webkit-transform: translate3d(80px,-80px,0);
+	transform: translate3d(80px,-80px,0);
+}
+.homeSlider .fotorama__fullscreen-icon{
+	display: none
+}
+
+/* When entering fullscreen mode on fotorama, the code gets moved from div#galerie
+	into a body.fullscreen, hence the second selector. */
+#galerie .homeSlider .fotorama__fullscreen-icon,
+.fullscreen .homeSlider .fotorama__fullscreen-icon{
+	display: block
+}
+.detailpictures .fotorama__nav__shaft{
+	margin: 10px 0 0
+}
+
+
+
+@media (min-width: 768px) {
+
+	/* fotorama
+	---------------------------------------------------------------------- */
+	.fotorama__nav,
+	.fotoramastartstop,
+	.fotoramacontrols{
+		display: block;
+	}
+
+	#fotoramacustomthumbs .icon.left{
+		left:-10px;
+	}
+	#fotoramacustomthumbs .icon.right{
+		right:-10px;
+	}
+	.fotorama__arr {
+		font-size:60px;
+	    right: 40px;
+	    padding-left: 30px;
+	    padding-right: 30px;
+		color:#fff;
+		margin-top: -35px;
+	}
+	.fotorama__video-play {
+		width: 110px;
+		height: 110px;
+	}
+	.fotorama__video-play:before {
+		font-family: "Font Awesome 5 Pro";
+		content: "\f144";
+		font-weight: 500;
+		font-size: 90px;
+		line-height: 106px;
+		color: #09f;
+		padding: 1px;
+	}
+	#content_detail .fotorama__stage__frame>.fotorama__video-play:before {
+		line-height: 113px;
+		margin-left:6px;
+	}
+	.fotorama__thumb .fotorama__video-play:before {
+		line-height: 35px;
+		font-size: 30px;
+	}
+	#galerie .fotorama__video-play:before {
+		line-height: 115px;
+		padding: 6px;
+	}
+	.fotorama__caption .container{
+		padding-left:90px;
+		padding-right:90px;
+	}
+	/* CAPTION */
+	.slider-wrap .fotorama__caption__wrap .container .row{
+		background-color:transparent !important;
+	}
+
+}
+
+
+
+
+@media (min-width: 992px) {
+	.fotorama__caption h1{
+		margin-top: 20px;
+	}
+}
+
+
+@media (min-width: 1200px) {
+
+	.fotorama__caption h1{
+		margin-top: 80px;
+	}
+}
