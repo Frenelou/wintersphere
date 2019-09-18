@@ -1,0 +1,22 @@
+.product_box {
+  width: 400px;
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  margin: 30px 0;
+
+  &--gray {
+    background-color: #666666;
+  }
+  &--blue-gray{
+    background-color: #6d7892;
+  }
+
+  span {
+    color: #000;
+  }
+
+  > *:not(button) {
+    margin-bottom: 30px;
+  }
+}

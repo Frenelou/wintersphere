@@ -1,0 +1,18 @@
+#hero {
+  background-image: url("assets/Hero_bg.png");
+  background-size: cover;
+  min-height: 50vw;
+  @media (min-width: 768px) {
+    height: 50vw;
+  }
+
+  &--content {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: inherit;
+  }
+}
