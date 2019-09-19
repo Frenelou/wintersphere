@@ -1,10 +1,12 @@
-<article class="product_box product_box--{{color}}" style="background-color:{{colorCode}};">
-  <h5>{{name}}</h5>
-  <img src="{{img}}" alt="">
+<article class="product_box" style="background-color:{{colorCode}};">
+  <h5 class="hiphen">{{name}}</h5>
+  <div class="img--wrapper">
+    <img src="{{img}}" alt="" class="img-fluid">
+  </div>
   <ul>
     {{#props}}
       <li><span>-</span> {{.}}</li>
     {{/props}}
   </ul>
-  <button class="button.btn.btn-link.center-block.compare--btn.compare-{{id}}">Quickview</button>
+  <button class="button btn btn-primary btn-sm">Quickview</button>
 </article>

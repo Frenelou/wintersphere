@@ -3,14 +3,26 @@
   padding: 30px;
   color: #fff;
   margin: 30px auto;
+
+  @media (max-width: 767px) {
+    .img--wrapper{
+      height: 250px;
+      img{height: 100%;width: auto;}
+    }
+  }
   @media (min-width: 768px) {
+    width: 350px;
+    .img--wrapper {
+      min-height: 300px;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media (min-width: 992px) {
     width: 400px;
-  }
-  &--gray {
-    background-color: #666666;
-  }
-  &--blue-gray{
-    background-color: #6d7892;
   }
 
   span {
@@ -19,5 +31,10 @@
 
   > *:not(button) {
     margin-bottom: 30px;
+  }
+
+  .btn {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

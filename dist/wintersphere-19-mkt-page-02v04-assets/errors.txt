@@ -1,0 +1,3 @@
+[2019-9-19 10:18:08] layer "SCOTT GTX STILL FRAMES.04_08_17_10.Still108": Unsupported extension: still
+[2019-9-19 10:18:08] layer "SCOTT GTX STILL FRAMES.04_08_17_10.Still108": Invalid quality: 1080
+[2019-9-19 10:18:08] layer "part_5_airflex_bg.pmg copie": Expected end of input but "c" found.

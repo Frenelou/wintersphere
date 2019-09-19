@@ -1,4 +1,25 @@
 #part_3_superguide {
+  section {
+    display: block;
+    position: relative;
+@media (min-width: 992px) {
+  height: 40vw;
+
+}
+    .img--wrapper {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      @media (min-width: 992px) {
+        margin-top: 30px;
+        position: absolute;
+        width: 70vw;
+        right: 0;
+        background-color: gray;
+      }
+    }
+  }
+
   .winter--pitch {
     &:after {
       background-color: #f1f0ed;
@@ -18,7 +39,7 @@
       }
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .product_box {
       position: absolute;
       top: 270px;
