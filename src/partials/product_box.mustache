@@ -1,12 +1,13 @@
 <article class="product_box" style="background-color:{{colorCode}};">
   <h5 class="hiphen">{{name}}</h5>
   <div class="img--wrapper">
-    <img src="{{img}}" alt="" class="img-fluid">
+    <img src="{{{img}}}" alt="" class="img-fluid">
   </div>
   <ul>
     {{#props}}
       <li><span>-</span> {{.}}</li>
     {{/props}}
   </ul>
-  <button class="button btn btn-primary btn-sm">Quickview</button>
+  <a class="button btn btn-primary btn-sm quickview" href="#">Quickview</a>
+  <span style="display: none" class="quick-look">{{id}}/quickView</span>
 </article>

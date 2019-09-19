@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +31,6 @@
       height: 100%;
     }
   }
-
 }
 // .container-absolute{position: absolute;}
 
@@ -51,21 +54,18 @@
 
 .show-more {
   position: relative;
+  cursor: pointer;
+  cursor: hand;
 
-  i {
-    margin: 15px;
-    background: #0099ff;
-    padding: 15px;
-    border-radius: 50%;
+  .fa-stack {
     position: absolute;
-    top: 0;
-    left: 0;
-    color: #fff;
+    top: 15px;
+    left: 15px;
   }
 
-  &:not(:hover) i {
-    opacity: 0.3;
-    cursor: pointer;
-    cursor: hand;
+  &:not(:hover) {
+    .fa-stack {
+      opacity: 0.5;
+    }
   }
 }
