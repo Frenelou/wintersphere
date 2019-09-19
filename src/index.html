@@ -986,19 +986,19 @@
 
 
 		<div id="content">
-			{{> partials/_HeroBanner.html }}
-			{{> partials/_Video-1.html }}
+			{{> partials/heroBanner }}
 			{{> partials/part_1_scrapper_ski }}
-			{{> partials/_Video-2.html }}
-			{{> partials/_part_2_vertic-gtx.html }}
-			<!-- partial:partials/_HeroBanner.html -->
-			<!-- partial -->
-			<!-- partial:partials/_Video-1.html -->
-			<!-- partial -->
-			<!-- partial:partials/_part_1_vertic-gtx.html -->
-			<!-- partial -->
-			<!-- partial:partials/_Video-2.html -->
-			<!-- partial -->
+			{{#video_1}}
+			{{> partials/video }}
+			{{/video_1}}
+			{{> partials/part_2_vertic-gtx }}
+			{{> partials/part_3_superguide }}
+			{{#video_2}}
+			{{> partials/video }}
+			{{/video_2}}
+			{{> partials/part_4_vapor }}
+			{{> partials/part_5_airflex }}
+			{{> partials/part_6_collections }}
 		</div>
 	</div>
 	<hr>

@@ -1,0 +1,29 @@
+#part_3_superguide {
+  .winter--pitch {
+    &:after {
+      background-color: #f1f0ed;
+      display: block;
+      width: 100vw;
+      z-index: -1;
+      content: "";
+    }
+    @media (min-width: 768px) {
+      margin-left: 100px;
+
+      &:after {
+        height: 1100px;
+        position: absolute;
+        top: 250px;
+        left: 70px;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .product_box {
+      position: absolute;
+      top: 270px;
+      left: -80px;
+      z-index: 1;
+    }
+  }
+}

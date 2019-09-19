@@ -1,0 +1,48 @@
+#part_5_airflex {
+  &--jumbotron {
+    @media (min-width: 768px) {
+      background-image: url("../wintersphere-19-mkt-page-02v04-assets/part_5_airflex_bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-size: contain;
+
+      .show-more {
+        display: block;
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .col-sm-6 {
+      padding: 15px;
+    }
+
+    &--right {
+      background-color: #f1f0ed;
+    }
+  }
+  @media (min-width: 768px) {
+    .product_box {
+      margin-top: 200px;
+    }
+  }
+
+  .winter--pitch {
+    &::after {
+      background-color: #f1f0ed;
+      display: block;
+      width: 60vw;
+      z-index: -1;
+      content: "";
+    }
+    @media (min-width: 768px) {
+      &::after {
+        height: 50%;
+        position: absolute;
+        right: -10vw;
+        bottom: 0;
+      }
+    }
+  }
+}

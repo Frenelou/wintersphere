@@ -1,10 +1,11 @@
 .product_box {
-  width: 400px;
   text-align: center;
   padding: 30px;
   color: #fff;
-  margin: 30px 0;
-
+  margin: 30px auto;
+  @media (min-width: 768px) {
+    width: 400px;
+  }
   &--gray {
     background-color: #666666;
   }

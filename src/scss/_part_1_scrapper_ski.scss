@@ -1,0 +1,12 @@
+#part_1_scrapper_ski {
+  .winter--pitch {
+    margin-left: 100px;
+  }
+  @media (min-width: 768px) {
+    .product_box {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
