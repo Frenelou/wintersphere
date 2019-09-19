@@ -2,10 +2,10 @@
   section {
     display: block;
     position: relative;
-@media (min-width: 992px) {
-  height: 40vw;
+    @media (min-width: 992px) {
+      height: 40vw;
+    }
 
-}
     .img--wrapper {
       overflow: hidden;
       height: 100%;

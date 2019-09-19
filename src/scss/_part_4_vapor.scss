@@ -3,7 +3,7 @@
     section {
       display: block;
       position: relative;
-      height: calc(50vw * 1.5);
+      height: 60vw;
 
       .img--wrapper {
         margin-top: 30px;
@@ -32,7 +32,7 @@
       }
     }
     @media (min-width: 992px) {
-      margin-left: 100px;
+      margin: 30px auto;
     }
   }
 }
