@@ -1,0 +1,60 @@
+{
+  "product1": {
+    "name": "scrapper ski 115",
+    "color": "blue-gray",
+    "colorCode": "#6d7892",
+    "props": ["Easy turn initiation", "Optimal Floatation", "Performance tuning"],
+    "img": "wintersphere-19-mkt-page-02v04-assets/product_scrapper_ski.png",
+    "id": "271785"
+  },
+  "product2": {
+    "name": "Vertix gtx 3L strech Jacket",
+    "color": "gray",
+    "colorCode": "#636873",
+    "props": ["GORE-TEX® 3 Layer fabrics", "Lightweight to access the steepest couloirs ", "GORE-TEX stretch inserts for enhanced mobility "],
+    "img": "wintersphere-19-mkt-page-02v04-assets/product_vertic_gtx_jacket.png",
+    "id": "272484"
+  },
+  "product3": {
+    "name": "SUPERGUIDE CARBON SKI BOOT",
+    "color": "",
+    "colorCode": "#71694f",
+    "props": ["Better flex in ski and walk mode", "Buckle ratchet locking system", "Automatic lock when skiing down"],
+    "img": "wintersphere-19-mkt-page-02v04-assets/product_superguide_boot.png",
+    "id": "272319"
+  },
+  "product4": {
+    "name": "vapor goggle",
+    "color": "",
+    "colorCode": "#78869e",
+    "props": ["Amplifier:enhances contrast&clarity", "100% UV Protection", "Revolutionary Air Management 2.0"],
+    "img": "wintersphere-19-mkt-page-02v04-assets/product_vapor_goggle.png",
+    "id": "271810"
+  },
+  "product5": {
+    "name": "SCOTT PATROL E1 22 BACKPACK KIT",
+    "color": "",
+    "colorCode": "#f56e67",
+    "props": ["SCOTT Alpride E1 Airbag System", "One of the lightest on the market", "1280g Full system weight"],
+    "img": "wintersphere-19-mkt-page-02v04-assets/product_patrol_backpack.png",
+    "id": "272628"
+  },
+  "product6": {
+    "name": "AIRFLEX PRO MEN'S VEST PROTECTOR",
+    "color": "",
+    "colorCode": "#d8784f",
+    "props": ["Level 1 Protection", "AirFlex Technology with D3O®", " Polartec powergrid fabric"],
+    "img": "wintersphere-19-mkt-page-02v04-assets/product_airflex_vest.png",
+    "id": "271913"
+  },
+  "video_1": {
+    "poster": "wintersphere-19-mkt-page-02v04-assets/video_cover_vertic.png",
+    "id": "video_1",
+    "url": "video/SCOTT - Brand MOVIE 1_1- H264.mov"
+  },
+  "video_2": {
+    "poster": "wintersphere-19-mkt-page-02v04-assets/video_cover_vapor.png",
+    "id": "video_2",
+    "url": "video/SCOTT - Brand MOVIE 16_9-J H264.mov"
+  }
+}
