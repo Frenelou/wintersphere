@@ -64,20 +64,14 @@ ul {
   }
 }
 
-.show-more {
-  position: relative;
-  cursor: pointer;
-  cursor: hand;
-
-  .fa-stack {
-    position: absolute;
-    top: 15px;
-    left: 15px;
+.hidden-xs {
+  @media (max-width: 767px) {
+    display: none;
   }
+}
 
-  &:not(:hover) {
-    .fa-stack {
-      opacity: 0.5;
-    }
+.hidden-sm-up {
+  @media (min-width: 768px) {
+    display: none;
   }
 }

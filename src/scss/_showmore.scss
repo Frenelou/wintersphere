@@ -1,0 +1,88 @@
+.show-more {
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+
+  .fa-stack {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  &:not(:hover) {
+    .fa-stack {
+      opacity: 0.5;
+    }
+  }
+
+  &--modal {
+
+  }
+}
+
+.related_products {
+  display: none;
+}
+
+#show-more-modal {
+  &--main {
+    @media (min-width: 992px) {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+    }
+  }
+
+  &--cover {
+    background-image: url("../wintersphere-19-mkt-page-02v04-assets/scrapper_ski.png");
+    background-size: cover;
+    @media (max-width: 767px) {
+      height: 50vh;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      height: 70vw;
+    }
+  }
+  .modal {
+    &-body {
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    &-header {
+      align-items: baseline;
+      @media (max-width: 767px) {
+        .close {
+          display: block;
+        }
+      }
+    }
+
+    &-lg {
+      @media (min-width: 768px) and (max-width: 991px) {
+        width: 100vw;
+      }
+      @media (min-width: 992px) {
+        width: 100rem;
+      }
+    }
+  }
+
+  .article {
+    width: 50%;
+    @media (min-width: 768px) and (max-width: 991px) {
+      width: 25%;
+    }
+  }
+}
+
+#quickview--box {
+  &--wrapper {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    z-index: 9;
+    // >*{margin-leaft: 100%;}
+  }
+}

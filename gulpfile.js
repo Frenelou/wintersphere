@@ -24,6 +24,11 @@ gulp.task("html", function() {
     .pipe(gulp.dest("./dist"));
 });
 
+gulp.task("js", function() {
+  return gulp
+    .src(["src/js/*.js"]).pipe(concat('scripts.js')).pipe(gulp.dest('dist/js/'));
+});
+
 gulp.task("buildChangePath", function() {
   return gulp
     .src(["dist/index.mustache", "dist/css/styles.css"])
@@ -54,7 +59,7 @@ gulp.task("default", function() {
     gulp.series(["html"], 'buildChangePath', ["reload"])
   );
   gulp.watch(["src/scss/*"], gulp.series(["sass"], 'buildChangePath', ["reload"]));
-  gulp.watch(["dist/js/scripts.js"], gulp.series(['buildChangePath',"reload"]));
+  gulp.watch(["src/js/*.js"], gulp.series(["js"],['buildChangePath',"reload"]));
 
   browserSync.init({
     server: {
