@@ -2,9 +2,21 @@
   background-image: linear-gradient(to top, rgba(36, 56, 63, 0.2), rgba(36, 56, 63, 0));
 }
 
+#singleslotpage .cms_disp-img_slot:first-child {
+  hr {
+    border-width: 0;
+    margin: 30px auto;
+  }
+}
+
 .w-50 {
   width: 50vw;
   max-width: 50vw;
+}
+
+.fa,
+.fas {
+  color: inherit;
 }
 
 .w-100 {
