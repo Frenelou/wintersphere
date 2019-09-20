@@ -1,0 +1,291 @@
+.fa,
+.fas {
+  color: inherit; }
+
+.teaserline {
+  padding-top: 6rem; }
+
+.gradient--gray-up {
+  background-image: linear-gradient(to top, rgba(36, 56, 63, 0.2), rgba(36, 56, 63, 0)); }
+
+.w-50 {
+  width: 50vw;
+  max-width: 50vw; }
+
+.w-100 {
+  width: 100%; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }
+
+@media (min-width: 992px) {
+  .w-400 {
+    width: 400px; }
+  .box-50 {
+    width: 50vw; }
+    .box-50--wrapper {
+      height: 100%; } }
+
+.winter--pitch {
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  @media (max-width: 767px) {
+    .winter--pitch {
+      margin-left: 15px;
+      margin-right: 15px; } }
+  .winter--pitch::before {
+    display: block;
+    height: 1px;
+    width: 200px;
+    background-color: #666666;
+    margin-bottom: 30px;
+    content: ""; }
+
+.show-more {
+  position: relative; }
+  .show-more i {
+    margin: 15px;
+    background: #0099ff;
+    padding: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff; }
+  .show-more:not(:hover) i {
+    opacity: 0.3;
+    cursor: pointer;
+    cursor: hand; }
+
+.txt-white {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 6px; }
+
+.txt-weigth--light {
+  font-weight: 300; }
+
+.txt-size--1 {
+  font-size: 5rem; }
+
+.txt-size--3 {
+  font-size: 3.6rem; }
+
+.txt-size--4 {
+  font-size: 1.8rem; }
+
+#hero {
+  background-image: url("https://assets.scott-sports.com/pages/wintersphere_2019/Hero_bg.png");
+  background-size: cover;
+  min-height: 50vw; }
+  @media (min-width: 768px) {
+    #hero {
+      height: 50vw; } }
+  #hero--content {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: inherit; }
+
+.product_box {
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  margin: 30px auto; }
+  @media (max-width: 767px) {
+    .product_box .img--wrapper {
+      height: 250px; }
+      .product_box .img--wrapper img {
+        height: 100%;
+        width: auto; } }
+  @media (min-width: 768px) {
+    .product_box {
+      width: 350px; }
+      .product_box .img--wrapper {
+        min-height: 300px;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center; } }
+  @media (min-width: 992px) {
+    .product_box {
+      width: 400px; } }
+  .product_box span {
+    color: #000; }
+  .product_box > *:not(button) {
+    margin-bottom: 30px; }
+  .product_box .btn {
+    padding-left: 30px;
+    padding-right: 30px; }
+
+#part_1_scrapper_ski .winter--pitch {
+  margin-left: 100px; }
+
+@media (min-width: 992px) {
+  #part_1_scrapper_ski .product_box {
+    position: absolute;
+    top: 0;
+    right: 0; } }
+
+#part_2_vertic_jacket .product_box {
+  margin-left: 0; }
+
+#part_3_superguide section {
+  display: block;
+  position: relative; }
+  @media (min-width: 992px) {
+    #part_3_superguide section {
+      height: 40vw; } }
+  #part_3_superguide section .img--wrapper {
+    overflow: hidden;
+    height: 100%;
+    width: 100%; }
+    @media (min-width: 992px) {
+      #part_3_superguide section .img--wrapper {
+        margin-top: 30px;
+        position: absolute;
+        width: 70vw;
+        right: 0;
+        background-color: gray; } }
+
+#part_3_superguide .winter--pitch:after {
+  background-color: #f1f0ed;
+  display: block;
+  width: 100vw;
+  z-index: -1;
+  content: ""; }
+
+@media (min-width: 768px) {
+  #part_3_superguide .winter--pitch {
+    margin-left: 100px; }
+    #part_3_superguide .winter--pitch:after {
+      height: 1100px;
+      position: absolute;
+      top: 250px;
+      left: 70px; } }
+
+@media (min-width: 992px) {
+  #part_3_superguide .product_box {
+    position: absolute;
+    top: 270px;
+    left: -80px;
+    z-index: 1; } }
+
+@media (min-width: 768px) {
+  #part_4_vapor section {
+    display: block;
+    position: relative;
+    height: 60vw; }
+    #part_4_vapor section .img--wrapper {
+      margin-top: 30px;
+      position: absolute;
+      width: 50vw;
+      right: 0;
+      background-color: gray; } }
+
+#part_4_vapor .winter--pitch:after {
+  background-color: #f1f0ed;
+  display: block;
+  width: 100vw;
+  z-index: -1;
+  content: ""; }
+
+@media (min-width: 768px) {
+  #part_4_vapor .winter--pitch:after {
+    height: 45%;
+    bottom: 0;
+    right: -20vw;
+    position: absolute; } }
+
+@media (min-width: 992px) {
+  #part_4_vapor .winter--pitch {
+    margin: 30px auto; } }
+
+@media (min-width: 768px) {
+  #part_5_airflex--jumbotron {
+    background-image: url("https://assets.scott-sports.com/pages/wintersphere_2019/part_5_airflex_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: contain; }
+    #part_5_airflex--jumbotron .show-more {
+      display: block;
+      width: 100%;
+      height: 250px; } }
+
+@media (max-width: 767px) {
+  #part_5_airflex .col-sm-6 {
+    padding: 15px; }
+  #part_5_airflex--right {
+    background-color: #f1f0ed; } }
+
+@media (min-width: 768px) {
+  #part_5_airflex .product_box {
+    margin-top: 200px; } }
+
+#part_5_airflex .winter--pitch::after {
+  background-color: #f1f0ed;
+  display: block;
+  width: 60vw;
+  z-index: -1;
+  content: ""; }
+
+@media (min-width: 768px) {
+  #part_5_airflex .winter--pitch::after {
+    height: 50%;
+    position: absolute;
+    right: -10vw;
+    bottom: -50px; } }
+
+#part_6_collections {
+  overflow: hidden; }
+  #part_6_collections span {
+    font-weight: 100; }
+  @media (max-width: 767px) {
+    #part_6_collections .collections-titles {
+      padding: 15px; }
+      #part_6_collections .collections-titles a.btn {
+        display: block;
+        margin-bottom: 15px; } }
+  @media (min-width: 768px) {
+    #part_6_collections .row {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex; }
+    #part_6_collections .col-sm-push-6 .collections-imgs {
+      z-index: 2; }
+    #part_6_collections .collections-imgs {
+      display: block;
+      height: 55vw;
+      position: absolute;
+      width: 55vw; }
+    #part_6_collections .collections-titles {
+      min-height: 35vw;
+      padding: 15px 30px;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      #part_6_collections .collections-titles:not(.col-sm-pull-6) {
+        padding-left: 7vw; }
+      #part_6_collections .collections-titles.col-sm-pull-6 {
+        align-items: flex-end; }
+        #part_6_collections .collections-titles.col-sm-pull-6 div {
+          padding-right: 30px; } }
+  @media (min-width: 992px) {
+    #part_6_collections h3 {
+      font-size: 4.6rem; } }
+
+#part_7_newsletter {
+  background-image: url("https://assets.scott-sports.com/pages/wintersphere_2019/part_7_newsletter_bg.png");
+  background-size: cover; }
+  #part_7_newsletter .panel {
+    border-width: 0;
+    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.3); }
