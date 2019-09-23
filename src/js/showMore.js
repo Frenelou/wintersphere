@@ -16,7 +16,7 @@ var showMore = {
   modalClose: function() {
     $("#show-more-modal").on("hidden.bs.modal", function(e) {
       $(
-        "#products, #articles_modal .modal-dialog, #quickview--box--footer",
+        "#products, #quickview--box--details, #quickview--box--footer",
       ).empty();
       $("#quickview--box--wrapper").hide();
 
@@ -24,8 +24,8 @@ var showMore = {
   },
   quickViewBack: function() {
     $(".quickview-back").click(function(event) {
-      if ($("#quickview--box--wrapper").hasClass("active")) {
-        $("#quickview--box--wrapper").toggleClass("active");
+      if ($("#quickview--box--wrapper").hasClass("findSizeOn")) {
+        $("#quickview--box--wrapper").toggleClass("findSizeOn");
         // $("#quickview-sizechart").hide();
         // $(".product_detail #articles_modal").show();
       } else {
@@ -37,13 +37,12 @@ var showMore = {
     $(".find-your-size").click(function(event) {
       $(".product_detail #articles_modal").hide();
       $("#quickview-sizechart").fadeIn();
-      $("#quickview--box--wrapper").addClass("active");
+      $("#quickview--box--wrapper").addClass("findSizeOn");
     });
   },
   bindMktQuickViewEvents: function() {
     this.bindColorAndSizesButtons();
     this.mktQuickViewThumbs();
-    this.bindAddToCartCallback();
     ACC.product.bindAddToCartButtonAnalytics();
     ACC.product.bindColorSizeAnalytics();
     ACC.product.enableAddToCartButton();
@@ -54,7 +53,7 @@ var showMore = {
   bindAddToCartCallback: function() {
     $("#addToCartButton").on("click", function(event) {
       event.preventDefault();
-      //   $("#quickview--box--wrapper").removeClass("active");
+      //   $("#quickview--box--wrapper").removeClass("findSizeOn");
       //   $("#quickview-sizechart").hide();
       //   $(".product_detail #articles_modal").hide();
       // $("#show-more-modal").modal('hide')
@@ -90,7 +89,7 @@ var showMore = {
   },
   ajaxSuccess: function(data) {
     var $html = $(data);
-    $("#quickview--box--main .modal-dialog").html(
+    $("#quickview--box--details").html(
       $(data)
         .find(".product_detail")
         .html()
@@ -109,8 +108,9 @@ var showMore = {
         .html()
     );
     $("#quickview--box--footer").html($html.find("#quickview-footer").html());
-    $("#quickview--box--wrapper").addClass("active");
+    $("#quickview--box--wrapper").addClass("findSizeOn");
     showMore.bindMktQuickViewEvents();
+    $("#quickview--box--wrapper").show();
     // $("#quickview--box--wrapper > *").animate({"margin-left": "-=100%"});
   },
   bindColorAndSizesButtons: function() {
@@ -124,7 +124,7 @@ var showMore = {
       },
       error: function(xhr, textStatus, errorThrown) {
         $("#quickviewErrorModalContent").appendTo(
-          "#articles_modal .modal-dialog"
+          "#articles_modal"
         );
       }
     };

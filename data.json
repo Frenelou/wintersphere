@@ -50,11 +50,16 @@
   "video_1": {
     "poster": "wintersphere-19-mkt-page-02v04-assets/video_cover_vertic.png",
     "id": "video_1",
-    "url": "video/SCOTT - Brand MOVIE 1_1- H264.mov"
+    "url": "vhttps://assets.scott-sports.com/pages/wintersphere_2019/video/Scott-Freeride-Zurs_scrapper-1920x1080."
   },
   "video_2": {
     "poster": "wintersphere-19-mkt-page-02v04-assets/video_cover_vapor.png",
     "id": "video_2",
-    "url": "video/SCOTT - Brand MOVIE 16_9-J H264.mov"
+    "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/Scott_Vapor_master_v01_1920x1080.mp4"
+  },
+  "video_3": {
+    "poster": "wintersphere-19-mkt-page-02v04-assets/boots_video.png",
+    "id": "video_3",
+    "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/Scott-Freeride-Zurs_skiboots-746x419.mp4"
   }
 }
