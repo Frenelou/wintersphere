@@ -3,23 +3,27 @@
   padding: 30px;
   color: #fff;
   margin: 30px auto;
-
   @media (max-width: 767px) {
-    .img--wrapper{
+    .img--wrapper {
       height: 250px;
-      img{height: 100%;width: auto;}
+
+      img {
+        max-height: 90%;
+        width: auto;
+      }
     }
+  }
+  .img--wrapper {
+    min-height: 300px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @media (min-width: 768px) {
     width: 350px;
-    .img--wrapper {
-      min-height: 300px;
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+
   }
   @media (min-width: 992px) {
     width: 400px;

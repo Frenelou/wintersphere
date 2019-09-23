@@ -31,7 +31,7 @@ gulp.task("js", function() {
 
 gulp.task("buildChangePath", function() {
   return gulp
-    .src(["dist/index.mustache", "dist/css/styles.css"])
+    .src(["dist/index.mustache", "dist/css/styles.css", "dist/js/scripts.js"])
     .pipe(replace("../wintersphere-19-mkt-page-02v04-assets/", ressourcesPath))
     .pipe(replace("&#x2F;", "/"))
     .pipe(replace("wintersphere-19-mkt-page-02v04-assets/", ressourcesPath))

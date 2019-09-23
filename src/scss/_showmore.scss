@@ -14,14 +14,6 @@
       opacity: 0.5;
     }
   }
-
-  &--modal {
-
-  }
-}
-
-.related_products {
-  display: none;
 }
 
 #show-more-modal {
@@ -43,6 +35,7 @@
       height: 70vw;
     }
   }
+
   .modal {
     &-body {
       padding: 0;
@@ -76,6 +69,14 @@
   }
 }
 
+.related_products {
+  display: none;
+}
+
+.product_list {
+  padding-bottom: 0;
+}
+
 #quickview--box {
   &--wrapper {
     display: none;
@@ -83,6 +84,20 @@
     background-color: #fff;
     top: 0;
     z-index: 9;
+
+    &.active {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      height: 100%;
+      width: 100%;
+    }
     // >*{margin-leaft: 100%;}
   }
+}
+
+#quickview-sizechart {
+  display: none;
 }
