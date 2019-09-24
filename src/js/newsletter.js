@@ -53,8 +53,8 @@ var maropostForm = {
   setup: function() {
     maropostForm.setCurrLang(),
       maropostForm.pickContent(),
-      maropostForm.modalActions(),
-      maropostForm.modalSet();
+      maropostForm.modalActions();
+      // maropostForm.modalSet();
   },
   modalPopUp: function() {
     if (!$('.modal').hasClass('in')) {
@@ -66,7 +66,7 @@ var maropostForm = {
     }
   },
   modalSet: function() {
-    this.modalCountdown = setTimeout(this.modalPopUp, 10000);
+    this.modalCountdown = setTimeout(this.modalPopUp, 30000);
   },
   setCurrLang: function() {
     let e = window.location.href.split(".com/")[1] || "global/de";

@@ -7,13 +7,15 @@ $(document).ready(function() {
     else{document.getElementById(`${id}`).play();}
   }
   function createNewVideo(id) {
+    var src = $(`#${id}_info`).data("src");
     var video = $("<video />", {
       id: id,
-      src: $(`#${id}_info`).data("src"),
       type: "video/mp4",
       class:"video",
       width: $(`#${id}_info`).width(),
-      controls: true
+      poster: $(`#${id}_info`).data("poster"),
+      controls: true,
+      html:`<source src="${src}.mp4" type="video/mp4" /><source src="${src}.ogg" type="video/ogg" /><source src="${src}.webm" type="video/webm" />`
     });
     video.appendTo(`#${id}_info`);
   }
@@ -42,7 +44,7 @@ $(document).ready(function() {
       document.getElementById("video_1").pause();
     })
     .addTo(controller);
-  var scene_video1 = new ScrollMagic.Scene({
+  var scene_video2 = new ScrollMagic.Scene({
     triggerElement: "#video_2_info"
   })
     .on("enter", function() {
@@ -52,7 +54,7 @@ $(document).ready(function() {
       document.getElementById("video_2").pause();
     })
     .addTo(controller);
-  var scene_video1 = new ScrollMagic.Scene({
+  var scene_video3 = new ScrollMagic.Scene({
     triggerElement: "#video_3_info"
   })
     .on("enter", function() {
@@ -60,6 +62,16 @@ $(document).ready(function() {
     })
     .on("leave", function() {
       document.getElementById("video_3").pause();
+    })
+    .addTo(controller);
+  var scene_video4 = new ScrollMagic.Scene({
+    triggerElement: "#video_4_info"
+  })
+    .on("enter", function() {
+      loadVideos("video_4");
+    })
+    .on("leave", function() {
+      document.getElementById("video_4").pause();
     })
     .addTo(controller);
 });
