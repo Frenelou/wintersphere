@@ -13,6 +13,7 @@
       }
     }
   }
+
   .img--wrapper {
     min-height: 300px;
     display: -webkit-flex;
@@ -23,7 +24,6 @@
   }
   @media (min-width: 768px) {
     width: 350px;
-
   }
   @media (min-width: 992px) {
     width: 400px;
@@ -40,5 +40,9 @@
   .btn {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  ul {
+    padding-left: 0 !important;
   }
 }

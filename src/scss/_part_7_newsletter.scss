@@ -13,6 +13,9 @@
       }
     }
   }
+  #newsletter-box--modal-close {
+    display: none;
+  }
 }
 @media (max-width:767px) {
   .btn-block-xs {
@@ -156,18 +159,16 @@ form.maropost-form_message-fail {
   }
 }
 
-#newsletter-box--modal-close {
-  display: none;
-}
+
 @media (max-width: 767px) {
   #newsletter_modal.modal.in .modal-dialog {
     max-width: 100% !important;
 
-    #newsletter-box--modal-close {
-      display: block;
-      position: absolute;
-      right: 15px;
-      top: 20px;
-    }
   }
+}
+#newsletter-box--modal-close {
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 20px;
 }

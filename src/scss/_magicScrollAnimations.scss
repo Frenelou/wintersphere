@@ -16,9 +16,53 @@ img {
 
 .product_box {
   transition-delay: 3s;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   opacity: 0;
+
   &.show {
+    opacity: 1;
+  }
+}
+
+.collections-imgs {
+  @media (max-width: 767px) {
+    height: 80vw;
+    }
+  img {
+    position: absolute;
+
+    &:not(.right) {
+      transition: left 1s;
+      left: -100%;
+    }
+
+    &.right {
+      transition: right 1s;
+      right: -100%;
+    }
+  }
+
+  &.show {
+    img {
+      &:not(.right) {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+  }
+}
+
+.collections-titles {
+  transition: opacity 2s;
+  opacity: 0;
+  @media (max-width: 767px) {
+    background-color: #fff;
+    }
+
+  &.fadeIn {
     opacity: 1;
   }
 }

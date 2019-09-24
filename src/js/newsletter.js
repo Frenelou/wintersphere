@@ -57,7 +57,8 @@ var maropostForm = {
       maropostForm.modalSet();
   },
   modalPopUp: function() {
-    if (!$('.modal').hasClass('in')) {
+    var visited = $.cookie("visited_wintersphere");
+    if (!$('.modal').hasClass('in') && visited == null) {
       $("#newsletter_modal").modal("show");
       clearTimeout(this.modalCountdown);
     } else {
@@ -67,6 +68,19 @@ var maropostForm = {
   },
   modalSet: function() {
     this.modalCountdown = setTimeout(this.modalPopUp, 30000);
+  },
+  modalActions: function() {
+    $("#newsletter_modal").on("show.bs.modal", function() {
+      $("#newsletter-box")
+        .detach()
+        .appendTo("#newsletter_modal_content");
+        $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
+    });
+    $("#newsletter_modal").on("hidden.bs.modal", function() {
+      $("#newsletter-box")
+        .detach()
+        .appendTo("#newsletter-box--wrapper");
+    });
   },
   setCurrLang: function() {
     let e = window.location.href.split(".com/")[1] || "global/de";
@@ -147,18 +161,6 @@ var maropostForm = {
           : void $(".maropost-form").show();
       maropostForm.showMessage("confirmed", ".maropost-form_message-dbl-opt");
     }
-  },
-  modalActions: function() {
-    $("#newsletter_modal").on("show.bs.modal", function() {
-      $("#newsletter-box")
-        .detach()
-        .appendTo("#newsletter_modal_content");
-    });
-    $("#newsletter_modal").on("hidden.bs.modal", function() {
-      $("#newsletter-box")
-        .detach()
-        .appendTo("#newsletter-box--wrapper");
-    });
   }
 };
 

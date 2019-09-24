@@ -1,8 +1,13 @@
 #hero {
   background-image: url("../wintersphere-19-mkt-page-02v04-assets/hero_bg.png");
   background-size: cover;
-  min-height: 50vw;
-  @media (min-width: 768px) {
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (max-width: 991px) {
+    height: 50vw;
+  }
+  @media (min-width: 992px) {
+    background-attachment: fixed;
     height: 50vw;
   }
 
