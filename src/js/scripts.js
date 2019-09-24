@@ -1,3 +1,4 @@
+var controller = new ScrollMagic.Controller();
 $(document).ready(function() {
   function loadVideos(id) {
     if ($(`#${id}`).length < 1 ) {
@@ -32,7 +33,7 @@ $(document).ready(function() {
   });
   // *****************************************************************************
 
-  var controller = new ScrollMagic.Controller();
+
 
   var scene_video1 = new ScrollMagic.Scene({
     triggerElement: "#video_1_info"

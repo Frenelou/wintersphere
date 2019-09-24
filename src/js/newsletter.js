@@ -54,14 +54,14 @@ var maropostForm = {
     maropostForm.setCurrLang(),
       maropostForm.pickContent(),
       maropostForm.modalActions();
-      // maropostForm.modalSet();
+      maropostForm.modalSet();
   },
   modalPopUp: function() {
     if (!$('.modal').hasClass('in')) {
       $("#newsletter_modal").modal("show");
+      clearTimeout(this.modalCountdown);
     } else {
       clearTimeout(this.modalCountdown);
-      console.log('resetted modal');
       maropostForm.modalSet();
     }
   },

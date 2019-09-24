@@ -1,0 +1,24 @@
+img {
+  &.scaledown {
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+    transition: transform 1s;
+
+    &.in,
+    &:hover {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+  }
+}
+
+.show-more {
+  overflow: hidden;
+}
+
+.product_box {
+  transition-delay: 3s;
+  transition: opacity .5s;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+}
