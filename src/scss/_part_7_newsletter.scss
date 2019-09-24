@@ -20,7 +20,6 @@
   }
 }
 
-
 form.maropost-form label {
   display: none;
 }
@@ -48,6 +47,17 @@ form.maropost-form input {
 
 form.maropost-form input:last-child {
   margin-bottom: 15px;
+}
+
+form.maropost-form input.btn.btn-default {
+  color: #09f;
+  background-color: transparent;
+  border-color: #09f;
+
+  &:hover {
+    background: #09f;
+    color: #fff;
+  }
 }
 
 form.maropost-form input::-webkit-input-placeholder {
@@ -144,5 +154,21 @@ form.maropost-form_message-fail {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
+  }
+}
+
+#newsletter-box--modal-close {
+  display: none;
+}
+@media (max-width: 767px) {
+  #newsletter_modal.modal.in .modal-dialog {
+    max-width: 100% !important;
+
+    #newsletter-box--modal-close {
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 20px;
+    }
   }
 }
