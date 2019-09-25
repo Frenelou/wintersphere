@@ -181,14 +181,13 @@ var showMore = {
     showMore.quickViewBack();
   },
   getProducts: function() {
-    $(".show-more a").on("click", function(event) {
+    $("a.show-more").on("click", function(event) {
       event.preventDefault();
       showMore.currentProduct = $(this)
-        .parent()
         .attr("id")
         .substr(6);
       showMore.bg_url = $(this)
-        .next("img")
+        .find("img")
         .attr("src");
       showMore.changeModalImage();
       showMore.fillModal();
