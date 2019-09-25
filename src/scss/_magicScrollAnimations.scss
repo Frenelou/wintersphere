@@ -19,7 +19,7 @@ img {
   transition: opacity 0.5s;
   opacity: 0;
 
-  &.show {
+  &.show_product {
     opacity: 1;
   }
 }
@@ -42,7 +42,7 @@ img {
     }
   }
 
-  &.show {
+  &.slideIn {
     img {
       &:not(.right) {
         left: 0;

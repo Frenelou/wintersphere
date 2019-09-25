@@ -1,6 +1,3 @@
-$(window).on("load", function() {
-  showMore.setup();
-});
 var showMore = {
   setup: function() {
     showMore.getProducts();

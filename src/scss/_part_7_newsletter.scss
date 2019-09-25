@@ -13,116 +13,14 @@
       }
     }
   }
+
   #newsletter-box--modal-close {
     display: none;
   }
 }
-@media (max-width:767px) {
-  .btn-block-xs {
-    width: 100%;
-  }
-}
 
-form.maropost-form label {
-  display: none;
-}
 
-form.maropost-form input {
-  padding: 0.9rem 1.2rem;
-  height: auto;
-  display: block;
-  width: 100%;
-  height: 3.56rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 1.4rem;
-  line-height: 1.42857;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  -webkit-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
-}
 
-form.maropost-form input:last-child {
-  margin-bottom: 15px;
-}
-
-form.maropost-form input.btn.btn-default {
-  color: #09f;
-  background-color: transparent;
-  border-color: #09f;
-
-  &:hover {
-    background: #09f;
-    color: #fff;
-  }
-}
-form.maropost-form input::-webkit-input-placeholder {
-  color: #959595;
-}
-
-form.maropost-form input:-moz-placeholder {
-  color: #959595;
-}
-
-form.maropost-form input::-moz-placeholder {
-  color: #959595;
-}
-
-form.maropost-form input:-ms-input-placeholder {
-  color: #959595;
-}
-
-form.maropost-form input::-ms-input-placeholder {
-  color: #959595;
-}
-
-form.maropost-form select {
-  display: block;
-  width: 100%;
-  height: 39px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  -webkit-transition: border-color ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
-  appearance: none;
-  background-size: 0.85rem 0.5rem;
-  background-image: url("../../common/images/scroller-v-next.png");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  padding-right: 2rem;
-}
-
-form.maropost-form_message,
-form.maropost-form_message-fail {
-  display: none;
-}
-
-.spacer {
-  margin-top: 40px;
-}
-
-.border-0 {
-  border: 0;
-}
-
-.noPadding {
-  padding: 0;
-}
 @media (max-width: 767px) {
   #contact_fields_email {
     margin-bottom: 15px;
@@ -158,17 +56,122 @@ form.maropost-form_message-fail {
     display: flex;
   }
 }
-
-
 @media (max-width: 767px) {
   #newsletter_modal.modal.in .modal-dialog {
     max-width: 100% !important;
-
   }
 }
-#newsletter-box--modal-close {
+
+#newsletter-box{
+  @media (max-width:767px) {
+    .btn-block-xs {
+      width: 100%;
+    }
+  }
+  form.maropost-form label {
+    display: none;
+  }
+
+  form.maropost-form input {
+    padding: 0.9rem 1.2rem;
+    height: auto;
+    display: block;
+    width: 100%;
+    height: 3.56rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+  }
+
+  form.maropost-form input:last-child {
+    margin-bottom: 15px;
+  }
+
+  form.maropost-form input.btn.btn-default {
+    color: #09f;
+    background-color: transparent;
+    border-color: #09f;
+
+    &:hover {
+      background: #09f;
+      color: #fff;
+    }
+  }
+
+  form.maropost-form input::-webkit-input-placeholder {
+    color: #959595;
+  }
+
+  form.maropost-form input:-moz-placeholder {
+    color: #959595;
+  }
+
+  form.maropost-form input::-moz-placeholder {
+    color: #959595;
+  }
+
+  form.maropost-form input:-ms-input-placeholder {
+    color: #959595;
+  }
+
+  form.maropost-form input::-ms-input-placeholder {
+    color: #959595;
+  }
+
+  form.maropost-form select {
+    display: block;
+    width: 100%;
+    height: 39px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+    appearance: none;
+    background-size: 0.85rem 0.5rem;
+    background-image: url("../../common/images/scroller-v-next.png");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+  }
+
+  form.maropost-form_message,
+  form.maropost-form_message-fail {
+    display: none;
+  }
+
+  .spacer {
+    margin-top: 40px;
+  }
+
+  .border-0 {
+    border: 0;
+  }
+
+  .noPadding {
+    padding: 0;
+  }
+  &--modal-close {
   display: block;
   position: absolute;
   right: 15px;
   top: 20px;
-}
+}}

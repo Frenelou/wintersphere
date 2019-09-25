@@ -171,7 +171,3 @@ function clData(e) {
 function llData(e) {
   (languages = e), maropostForm.setLanguagesList();
 }
-
-$(document).ready(function() {
-  maropostForm.setup();
-});
