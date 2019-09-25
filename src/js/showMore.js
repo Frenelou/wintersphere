@@ -23,8 +23,6 @@ var showMore = {
     $(".quickview-back").click(function(event) {
       if ($("#quickview--box--wrapper").hasClass("findSizeOn")) {
         $("#quickview--box--wrapper").toggleClass("findSizeOn");
-        // $("#quickview-sizechart").hide();
-        // $(".product_detail #articles_modal").show();
       } else {
         $("#quickview--box--wrapper").hide();
       }
@@ -108,7 +106,6 @@ var showMore = {
     $("#quickview--box--wrapper").addClass("findSizeOn");
     showMore.bindMktQuickViewEvents();
     $("#quickview--box--wrapper").show();
-    // $("#quickview--box--wrapper > *").animate({"margin-left": "-=100%"});
   },
   bindColorAndSizesButtons: function() {
     var ajaxParams = {

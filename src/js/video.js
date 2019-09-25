@@ -3,7 +3,7 @@ var videoObj = {
   setup: function() {
     videoObj.createAllVideos();
     $(window).on("resize", function(event) {
-      if (prevWidth !== $(window).width()) {
+      if (this.prevWidth !== $(window).width()) {
         $(".video").remove();
         videoObj.createAllVideos();
       }
