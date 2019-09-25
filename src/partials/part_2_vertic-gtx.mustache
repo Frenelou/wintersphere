@@ -1,11 +1,13 @@
 <div class="jumbotron-fluid gradient--gray-up">
   <div class="container no-padding  ">
-    <div class="row " id="part_2_vertic_jacket">
+    <div class="row follow-parent" id="part_2_vertic_jacket">
       <div class="col-sm-6">
         <p class="winter--pitch w-400">The slick design and the muted colorways of the SCOTT Vertic GTX 3L Stretch Jacket hides technical features and comfort. Constructed using a GORE-TEX® membrane, it stands up to the worst winter weather.</p>
-        {{#product2}}
-          {{> product_box }}
-        {{/product2}}
+        <div class="follow-me" id="follow_1" data-parent="part_2_vertic_jacket" data-offset="400" data-duration="0">
+          {{#product2}}
+            {{> product_box }}
+          {{/product2}}
+        </div>
       </div>
       <div class="col-sm-6 no-padding box-50--wrapper">
         <a data-toggle="modal" href="#" class="box-50 show-more" id="show--vertic">

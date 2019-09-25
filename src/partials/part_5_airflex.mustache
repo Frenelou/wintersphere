@@ -1,5 +1,5 @@
 <div class="jumbotron-fluid" id="part_5_airflex--jumbotron">
-  <a class="show-more" data-toggle="modal"  href="#"  id="show--airflex">
+  <a class="show-more" data-toggle="modal" href="#" id="show--airflex">
     {{> showMore }}
     <img src="wintersphere-19-mkt-page-02v04-assets/part_5_airflex_mobile.png" alt="" class="hidden-sm-up">
   </a>
@@ -15,9 +15,12 @@
       <div class="col-sm-6" id="part_5_airflex--right">
         <p class="winter--pitch hidden-sm-up">The SCOTT AirFlex Polar Vest Protector features the new and innovative AirFlex D3O plate with a SCOTT specific design. Enjoy maximum comfort, optimal airflow thanks to strategically placed vents as well
           as the protective performance of this tough tested plate. In combination with PolarTec fabric, the SCOTT AirFlex Polar Vest Protector keeps you warm, whatever your adventure.</p>
-        {{#product6}}
-          {{> product_box }}
-        {{/product6}}
+        <div id="follow_5_trigger"></div>
+        <div class="follow-me" id="follow_5" data-parent="follow_5_trigger" data-offset="500" data-duration="100">
+          {{#product6}}
+            {{> product_box }}
+          {{/product6}}
+        </div>
       </div>
     </div>
   </div>
