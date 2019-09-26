@@ -9,15 +9,19 @@
         with powerful energy transfer.
       </p>
       <section>
-        <div class="img--wrapper">
+        <div class="img--wrapper slidable" id="boot_slide">
           <img class="img-fluid w-100" src="wintersphere-19-mkt-page-02v04-assets/part_3_boots.png" alt="">
         </div>
       </section>
     </div>
     <div class="col-md-5">
-      {{#product3}}
-        {{> product_box }}
-      {{/product3}}
+      <div id="follow_2_trigger">
+        <div class="follow-me" id="follow_2" data-parent="follow_2_trigger" data-offset="300" data-duration="100">
+          {{#product3}}
+          {{> product_box }}
+          {{/product3}}
+        </div>
+      </div>
     </div>
   </div>
 </div>

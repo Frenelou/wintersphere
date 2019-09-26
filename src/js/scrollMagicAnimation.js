@@ -1,25 +1,36 @@
-var controller = new ScrollMagic.Controller();
-var follow1 = null;
-var follow2 = null;
+var controller = null;
 var scrollMagicWintersphere = {
+  prevWidth: 0,
   setup: function() {
-    this.scaleDown(),
-      /* this.productBox(),*/ this.parallax(),
-      this.colections(),
-      this.video();
     this.resizeToggle();
+  },
+  desktopOnlyScenes: function() {
+    this.scaleDown(), this.parallax(), this.follow();
+  },
+  universalScenes: function() {
+    controller = new ScrollMagic.Controller();
+    this.slideIn();
+    if ($(window).width() >= 992) {
+      scrollMagicWintersphere.desktopOnlyScenes();
+    }
   },
   resizeToggle: function() {
     $(window).on("load resize", function(event) {
-      if ($(window).width() <= 991) {
-        follow1.destroy(true);
-        follow1 = null;
-        follow2.destroy(true);
-        follow2 = null;
-      } else {
-        if (follow1 === null) {
-          scrollMagicWintersphere.follow();
-        }
+      if (controller === null) {
+        scrollMagicWintersphere.universalScenes();
+      } else if (
+        $(window).width() <= 991 &&
+        this.prevWidth >= $(window).width()
+      ) {
+        controller.destroy();
+        controller = null;
+        console.log("destroyed");
+        scrollMagicWintersphere.universalScenes();
+      } else if (
+        $(window).width() >= 992 &&
+        this.prevWidth <= $(window).width()
+      ) {
+        scrollMagicWintersphere.desktopOnlyScenes();
       }
     });
   },
@@ -48,11 +59,26 @@ var scrollMagicWintersphere = {
     });
   },
   parallax: function() {
-    let popProduct = new ScrollMagic.Scene({
-      triggerElement: "#show--scrapper_ski"
-    })
-      .setTween("#show--scrapper_ski > div", {y: "50px", ease: Linear.easeNone})
-      .addTo(controller);
+    $(".parallax").each(function(index, el) {
+      let thisID = "#" + $(el).attr("id"),
+        parent = $(el).data("parent"),
+        pWidth = $(parent).width(),
+        elY = $(el).data("y");
+
+      $(el)
+        .closest(".parallax_parent")
+        .css(
+          "max-width",
+          $(el)
+            .closest(".parallax_parent")
+            .width()
+        );
+      let scroller = new ScrollMagic.Scene({
+        triggerElement: parent
+      })
+        .setTween(thisID, {y: elY, ease: Linear.easeNone})
+        .addTo(controller);
+    });
   },
   follow: function() {
     $(".follow-me").each(function(index, el) {
@@ -65,60 +91,24 @@ var scrollMagicWintersphere = {
           duration: elDuration,
           offset: elOffset
         })
-          .setPin(thisID, {y: "100px", ease: Circ.easeInOut})
+          .setPin(thisID, {y: "100px", ease: Linear.easeOutBounce})
           .addTo(controller);
     });
   },
-  productBox: function() {
-    $(".product_box").each(function(index, el) {
-      let thisID = "#" + $(el).attr("id");
-
-      let popProduct = new ScrollMagic.Scene({
-        triggerElement: thisID
-      })
-        .on("enter", function() {
-          $(thisID).addClass("show_product");
+  slideIn: function() {
+    $(".collections-imgs, .slidable").each(function(index, el) {
+      let thisID = "#" + $(el).attr("id"),
+        colImg = new ScrollMagic.Scene({
+          triggerElement: thisID
         })
-        .addTo(controller);
-    });
-  },
-  colections: function() {
-    $(".collections-imgs").each(function(index, el) {
-      let thisID = "#" + $(el).attr("id");
-
-      let colImg = new ScrollMagic.Scene({
-        triggerElement: thisID
-      })
-        .on("enter", function() {
-          $(thisID).addClass("slideIn");
-          $(thisID)
-            .parent()
-            .siblings(".collections-titles")
-            .addClass("fadeIn");
-        })
-        .addTo(controller);
-    });
-  },
-  video: function() {
-    $("[id^=video_]").each(function(index, el) {
-      let thisID = "#" + $(el).attr("id");
-      let videoId = thisID.substring(1).replace("_info", "");
-
-      let video = new ScrollMagic.Scene({
-        triggerElement: thisID,
-        offset: -200
-      })
-        .on("start", function() {
-          videoObj.loadVideos(videoId);
-        })
-        .on("enter", function() {
-          videoObj.loadVideos(videoId);
-          videoObj.playVideo(videoId);
-        })
-        .on("leave", function() {
-          document.getElementById(videoId).pause();
-        })
-        .addTo(controller);
+          .on("enter", function() {
+            $(thisID).addClass("slideIn");
+            $(thisID)
+              .parent()
+              .siblings(".collections-titles")
+              .addClass("fadeIn");
+          })
+          .addTo(controller);
     });
   }
 };

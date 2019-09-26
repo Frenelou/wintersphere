@@ -1,6 +1,7 @@
 .show-more {
   position: relative;
   display: block;
+  overflow: hidden;
   cursor: pointer;
   cursor: hand;
 
@@ -102,3 +103,4 @@
 #quickview-sizechart {
   display: none;
 }
+#quickview--box--footer{display: none;}

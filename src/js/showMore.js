@@ -12,11 +12,8 @@ var showMore = {
   bg_url: "",
   modalClose: function() {
     $("#show-more-modal").on("hidden.bs.modal", function(e) {
-      $(
-        "#products, #quickview--box--details, #quickview--box--footer",
-      ).empty();
+      $("#products, #quickview--box--details, #quickview--box--footer").empty();
       $("#quickview--box--wrapper").hide();
-
     });
   },
   quickViewBack: function() {
@@ -26,6 +23,7 @@ var showMore = {
       } else {
         $("#quickview--box--wrapper").hide();
       }
+      $("#quickview--box--footer").hide();
     });
   },
   bindFindYourSize: function() {
@@ -105,7 +103,7 @@ var showMore = {
     $("#quickview--box--footer").html($html.find("#quickview-footer").html());
     $("#quickview--box--wrapper").addClass("findSizeOn");
     showMore.bindMktQuickViewEvents();
-    $("#quickview--box--wrapper").show();
+    $("#quickview--box--wrapper, #quickview--box--footer").show();
   },
   bindColorAndSizesButtons: function() {
     var ajaxParams = {
@@ -117,9 +115,7 @@ var showMore = {
         showMore.ajaxSuccess(result);
       },
       error: function(xhr, textStatus, errorThrown) {
-        $("#quickviewErrorModalContent").appendTo(
-          "#articles_modal"
-        );
+        $("#quickviewErrorModalContent").appendTo("#articles_modal");
       }
     };
     $("#quickview--box--main div.modal--colors a").click(function(event) {
@@ -183,9 +179,16 @@ var showMore = {
       showMore.currentProduct = $(this)
         .attr("id")
         .substr(6);
-      showMore.bg_url = $(this)
-        .find("img")
-        .attr("src");
+      showMore.bg_url =
+        $(this)
+          .find("img")
+          .attr("src") ||
+        $(this)
+          .find("div")
+          .css("background-image")
+          .replace("url(", "")
+          .replace(")", "")
+          .replace(/\"/gi, "");
       showMore.changeModalImage();
       showMore.fillModal();
     });

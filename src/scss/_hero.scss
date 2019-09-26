@@ -3,9 +3,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  @media (max-width: 991px) {
-    height: 50vw;
-  }
+  @media (max-width: 767px) {
+    min-height: 80vh;
+    }
+    @media (min-width: 992px) {
+
+    }
+
   @media (min-width: 992px) {
     // background-attachment: fixed;
     height: 50vw;

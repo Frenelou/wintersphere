@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row " id="part_4_vapor">
       <div class="col-sm-6">
-        <a class="show-more" data-toggle="modal"  href="#"  id="show--vapor-goggle">
+        <a class="show-more" data-toggle="modal" href="#" id="show--vapor-goggle">
           <img src="wintersphere-19-mkt-page-02v04-assets/part_4_vapor_girl.png" alt="" class="scaledown">
           {{> showMore }}
         </a>
@@ -14,21 +14,24 @@
         </div>
         <section>
           <div class="img--wrapper" id="show--vapor-back">
-            <img class="w-100 scaledown" src="wintersphere-19-mkt-page-02v04-assets/part_4_patrol_back.png" alt="">
+            <img class="w-100" src="wintersphere-19-mkt-page-02v04-assets/part_4_patrol_back.png" alt="">
           </div>
         </section>
       </div>
       <div class="col-sm-6">
         <p class="winter--pitch w-400">The SCOTT Vapor goggle is the latest addition to the range. The totally new semi-rimless frame has been designed to create a perfect airflow inside the lens to avoid fogging. </p>
-        <a class="show-more" data-toggle="modal"  href="#"  id="show--vapor-backpack">
-          <img class="scaledown" src="wintersphere-19-mkt-page-02v04-assets/part_4_vapor_front.png" alt="">
-          {{> showMore }}
-        </a>
-        <div id="follow_4_trigger"></div>
-        <div class="follow-me" id="follow_4" data-parent="follow_4_trigger" data-offset="300" data-duration="100">
-        {{#product5}}
-          {{> product_box }}
-        {{/product5}}
+        <span id="parallax_1_trigger"></span>
+
+        <div class="follow-me" id="follow_6" data-parent="parallax_1_trigger" data-offset="400" data-duration="200">
+          <a class="show-more parallax_parent" data-toggle="modal" href="#" id="show--vapor-backpack">
+            <div style="background-image: url(wintersphere-19-mkt-page-02v04-assets/part_4_vapor_front.png);" class="parallax" id="parallax_1" data-parent="#parallax_1_trigger" data-y="100px"></div>
+            {{> showMore }}
+          </a>
+        </div>
+        <div class="follow-me" id="follow_4" data-parent="show--vapor-back" data-offset="200" data-duration="200">
+          {{#product5}}
+            {{> product_box }}
+          {{/product5}}
         </div>
         <p class="winter--pitch w-400 center">The SCOTT Vapor goggle is the latest addition to the range. The totally new semi-rimless frame has been designed to create a perfect airflow inside the lens to avoid fogging. </p>
       </div>
