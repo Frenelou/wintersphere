@@ -5,14 +5,42 @@ var scrollMagicWintersphere = {
     this.resizeToggle();
   },
   desktopOnlyScenes: function() {
-    this.scaleDown(), this.parallax(), this.follow();
+    this.scaleDown(), this.parallax(), this.follow(), this.video();
   },
   universalScenes: function() {
     controller = new ScrollMagic.Controller();
-    this.slideIn();
+    this.fadeTextIn(), this.slideIn();
     if ($(window).width() >= 992) {
       scrollMagicWintersphere.desktopOnlyScenes();
     }
+  },
+  video: function() {
+    $("video").each(function(index, el) {
+      let id = $(el).attr("id"),
+        video = new ScrollMagic.Scene({
+          triggerElement: "#" + id
+        })
+          .on("enter", function() {
+            document.getElementById(id).play();
+          })
+          .on("leave", function() {
+            document.getElementById(id).pause();
+          })
+          .addTo(controller);
+    });
+  },
+  fadeTextIn: function() {
+    $("p, h2, h3, h4").each(function(index, el) {
+      let id = `textFade_${index}`;
+      $(el).attr("id", id);
+      fadeText = new ScrollMagic.Scene({
+        triggerElement: "#" + id
+      })
+        .on("enter", function() {
+          $(`#${id}`).addClass("fadeText");
+        })
+        .addTo(controller);
+    });
   },
   resizeToggle: function() {
     $(window).on("load resize", function(event) {

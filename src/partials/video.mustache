@@ -1,8 +1,10 @@
 <div class="container-fluid no-padding">
   <div class="row-fluid ">
-    <div class="col-sm-12 no-padding" >
-      <div class="video_wrapper {{class}}" id="{{id}}_info" data-src="{{{url}}}" data-poster="{{{poster}}}" data-id="{{id}}">
-      </div>
+    <div class="col-sm-12 no-padding">
+      <video id="{{id}}" class="video" poster="{{{poster}}}" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="{{{url}}}.mp4" type="video/mp4">
+        <source src="{{{url}}}.ogg" type="video/ogg">
+        <source src="{{{url}}}.webm" type="video/webm"></video>
     </div>
   </div>
 </div>

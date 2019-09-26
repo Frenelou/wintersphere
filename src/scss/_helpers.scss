@@ -1,4 +1,21 @@
-#breadcrumbs--container{display: none;}
+#breadcrumbs--container {
+  display: none;
+}
+
+div[id^=part_] {
+  h2,
+  h3,
+  h4,
+  p {
+    transition-delay: 3s;
+    transition: opacity 0.5s;
+    opacity: 0;
+
+    &.fadeText {
+      opacity: 1;
+    }
+  }
+}
 
 #singleslotpage .cms_disp-img_slot:first-child {
   hr {
