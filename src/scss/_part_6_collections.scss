@@ -18,7 +18,7 @@
   }
   @media (min-width: 768px) {
     .row {
-      display: -webkit-flex;
+      
       display: -ms-flex;
       display: flex;
     }
@@ -38,7 +38,7 @@
       &-titles {
         min-height: 35vw;
         padding: 15px 30px;
-        display: -webkit-flex;
+        
         display: -ms-flex;
         display: flex;
         flex-direction: column;

@@ -47,3 +47,12 @@
     }
   }
 }
+
+#show--superguide {
+  @media (min-width: 992px) {
+  position: absolute;
+  right: 0;
+  width: 55vW;
+
+  }
+}

@@ -44,7 +44,7 @@ var showMore = {
     ACC.quickview.bindAddToCartCallback();
   },
   bindAddToCartCallback: function() {
-    $("#addToCartButton").on("click", function(event) {
+    $("#addToCartButton").on("click touch", function(event) {
       event.preventDefault();
       //   $("#quickview--box--wrapper").removeClass("findSizeOn");
       //   $("#quickview-sizechart").hide();
@@ -161,6 +161,7 @@ var showMore = {
     );
   },
   fillModal: function() {
+    console.log(showMore.currentProduct);
     $(`#related_products_box_${showMore.currentProduct} .article`).each(
       function(index, el) {
         $(el)
@@ -174,7 +175,7 @@ var showMore = {
     showMore.quickViewBack();
   },
   getProducts: function() {
-    $("a.show-more").on("click", function(event) {
+    $("a.show-more").on("click touch", function(event) {
       event.preventDefault();
       showMore.currentProduct = $(this)
         .attr("id")

@@ -3,16 +3,16 @@
     margin-left: 100px;
   }
   @media (min-width: 992px) {
-    // .product_box {
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    // }
+    .product_box {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
   @media (max-width: 767px) {
     #follow_0_parent {
       position: relative !important;
-      display: -webkit-flex;
+      
       display: -ms-flex;
       display: flex;
       justify-content: center;

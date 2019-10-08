@@ -54,11 +54,18 @@ var maropostForm = {
     maropostForm.setCurrLang(),
       maropostForm.pickContent(),
       maropostForm.modalActions();
+      maropostForm.checkPolicy();
       maropostForm.modalSet();
+  },
+  checkPolicy : function() {
+    $('#custom_fields_privacy').on('click touch', function(event) {
+      $('#newsletter_form_submit').attr('disabled', function(_, attr){ return !attr});
+    });
   },
   modalPopUp: function() {
     var visited = $.cookie("visited_wintersphere");
-    if (!$('.modal').hasClass('in') && visited == null) {
+    // visited = null;
+    if (!$('.modal').hasClass('in') && visited == null && window.location.href.indexOf("contact_fields") < 0) {
       $("#newsletter_modal").modal("show");
       clearTimeout(this.modalCountdown);
     } else {
@@ -68,6 +75,7 @@ var maropostForm = {
   },
   modalSet: function() {
     this.modalCountdown = setTimeout(this.modalPopUp, 30000);
+    // this.modalCountdown = setTimeout(this.modalPopUp, 300);
   },
   modalActions: function() {
     $("#newsletter_modal").on("show.bs.modal", function() {
@@ -83,7 +91,7 @@ var maropostForm = {
     });
   },
   setCurrLang: function() {
-    let e = window.location.href.split(".com/")[1] || "global/de";
+    let e = window.location.href.split(".com/")[1] || window.location.href.split("3000/")[1];
     if (
       ((currLang = e.split("/")[1] || "en"),
       (currCountry = e.split("/")[0] || "gb"),
@@ -98,6 +106,7 @@ var maropostForm = {
       (t.src = "https://assets.scott-sports.com/ressources/language-list.json"),
         document.body.appendChild(t);
     }
+    $('#custom_fields_country_isocode_alpha2').val(e.split("/")[0].toString());
   },
   showMessage: function(e, o) {
     !o && $(".maropost-form").fadeOut(),
@@ -138,6 +147,7 @@ var maropostForm = {
         .toLowerCase());
   },
   setLanguagesList: function() {
+
     let e = languages[currLang] || languages.en;
     Object.keys(e).map(function(o) {
       $("<option/>", {

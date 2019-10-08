@@ -1,10 +1,28 @@
-<div class="container-fluid no-padding">
-  <div class="row-fluid ">
-    <div class="col-sm-12 no-padding">
-      <video id="{{id}}" class="video" poster="{{{poster}}}" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="{{{url}}}.mp4" type="video/mp4">
-        <source src="{{{url}}}.ogg" type="video/ogg">
-        <source src="{{{url}}}.webm" type="video/webm"></video>
+{{^standalone}}
+  <div class="container-fluid no-padding">
+    <div class="row-fluid ">
+      <div class="col-sm-12 no-padding">
+        {{/standalone}}
+        <video id="{{id}}" class="video {{^autoplay}}noPlay{{/autoplay}}" poster="{{{poster}}}" {{#autoplay}} autoplay playsinline loop="loop" {{/autoplay}} {{^unmute}} muted="muted" {{/unmute}} >
+          <source src="{{{url}}}.mp4" type="video/mp4">
+          <source src="{{{url}}}.ogg" type="video/ogg">
+          <source src="{{{url}}}.webm" type="video/webm"></video>
+        {{^autoplay}}
+          <div id="hero_cta">
+            {{#scrim}}
+            <h2 class="hiphen text-center nofade"></h2>
+            {{/scrim}}
+            <span class="fa-stack fa-4x" style="vertical-align: top;">
+              <i class="fal fa-circle fa-stack-2x" style="color: #0099ff;"></i>
+              <i class="fas fa-play fa-3x" style="color: #0099ff;"></i>
+            </span>
+          </div>
+          <button type="button" name="button" class="btn btn-link videoStop">
+            <i class="fal fa-times" style="color: #0099ff;"></i>
+          </button>
+          {{/autoplay}}
+          {{^standalone}}
+      </div>
     </div>
   </div>
-</div>
+  {{/standalone}}

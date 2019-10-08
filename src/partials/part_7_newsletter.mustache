@@ -9,29 +9,53 @@
               <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-link" id="newsletter-box--modal-close">
                 <i class="fal fa-times fa-2x"></i>
               </button>
-              <h3 class="hiphen text-center">Sign up for our newsletter</h3>
-              <p class="text-center">READY FOR WINTER? SUBSCRIBE TO RECEIVE OUR EXCLUSIVE OFFERS, STORIES AND VIDEOS DIRECTLY IN YOUR INBOX.</p>
-              <form action='https://api.maropost.com/accounts/1020/forms/19/subscribe/a61193a89dd1dcb41878e9c0bc71931deba902f5' class='maropost-form' method='post'>
+              <h3 class="hiphen text-center nofade" data-text="nl_title">Sign up for our newsletter</h3>
+              <p class="text-center nofade" data-text="nl_subtitle">READY FOR WINTER? SUBSCRIBE TO RECEIVE OUR EXCLUSIVE OFFERS, STORIES AND VIDEOS DIRECTLY IN YOUR INBOX.</p>
+              <form action='https://api.maropost.com/accounts/1020/forms/30/subscribe/ff32fcaf073d11fc8cdca239044d44c28a74d4e2' class='maropost-form' method='post'>
 
-                <div class="form-group" id="newsletter--main">
-                  <label for="contact_fields_email" class="col-md-6 ">Email</label>
-                  <input type="text" name="contact_fields[email]" id="contact_fields_email" placeholder="Your Email Address" class="col-sm-6" />
-                  <input value="Subscribe" type="submit" name="commit" class="btn btn-default" />
+                <div class="form-group">
+                  <div class="col-md-8">
+                    <label for="contact_fields_email" data-text="nl_email">Email</label>
+                    <input type="text" name="contact_fields[email]" placeholder="Your Email Address" id="contact_fields_email" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="custom_fields_country" data-text="nl_country">Country</label>
+                    <div class="select-wrapper">
+                      <select name="custom_fields[country]" id="custom_fields_country"></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-sm-12">
+                  <input value="Subscribe" type="submit" name="commit" class="btn btn-default btn-block" id="newsletter_form_submit" disabled/>
                 </div>
 
-                <div class="form-group" id="custom_fields_privacy--wrapper">
-                  <label for="custom_fields_privacy" class="col-md-4 hidden">Privacy Policy</label>
-                  <input type="hidden" name="custom_fields[privacy]" class="input-md me" required />
-                  <input value="1" type="checkbox" name="custom_fields[privacy]" id="custom_fields_privacy" />
-                  <p>I agree to receive the SCOTT Wintersports newsletter. Our newsletter informs you about sport-related topics, our products, offers and our company. You can unsubscribe from the newsletter at any time. Information on the content,
-                    the
-                    logging of your registration, the distribution via the provider Maropost, statistical evaluation as well as your disclaimer possibilities are given in our <a href="">Privacy Policy</a>.</p>
+                <div class="form-group">
+                  <div class="col-sm-12" id="custom_fields_privacy--wrapper">
+                    <label for="custom_fields_privacy" class="col-md-4 hidden">Privacy Policy</label>
+                    <input type="hidden" name="custom_fields[privacy]" class="input-md me" required />
+                    <input value="1" type="checkbox" name="custom_fields[privacy]" id="custom_fields_privacy" />
+                    <p class="nofade" data-text="nl_pp" id="nl_pp">I agree to receive the SCOTT Wintersports newsletter. Our newsletter informs you about sport-related topics, our products, offers and our company. You can unsubscribe from the newsletter at any time. Information on the
+                      content,
+                      the
+                      logging of your registration, the distribution via the provider Maropost, statistical evaluation as well as your disclaimer possibilities are given in our <a href="">Privacy Policy</a>.</p>
+                  </div>
                 </div>
 
+                <div class="form-group hidden">
+                  <label for="custom_fields_country_isocode_alpha2" class="col-md-4 ">Country isocode alpha2</label>
+                  <input type="text" name="custom_fields[country_isocode_alpha2]" id="custom_fields_country_isocode_alpha2" />
+                  <label for="custom_fields_language_preferred" class="col-md-4 ">Preferred communication language</label>
+                  <select name="custom_fields[language_preferred]" id="custom_fields_language_preferred"></select>
+                  <label for="custom_fields_do_ski" class="col-md-4 ">Do ski</label>
+                  <input type="hidden" name="custom_fields[do_ski]" id="custom_fields_language_preferred" class="input-md me" required />
+                  <input value="1" type="checkbox" name="custom_fields[do_ski]" id="custom_fields_do_ski" checked />
+                </div>
 
-                <div class="maropost-form_message-fail text-danger">&nbsp;</div>
-                <div class="maropost-form_message-dbl-opt">&nbsp;</div>
-                <div class="maropost-form_message">&nbsp;</div>
+              </form>
+
+              <div class="maropost-form_message-fail text-danger text-center">&nbsp;</div>
+              <div class="maropost-form_message-dbl-opt text-center">&nbsp;</div>
+              <div class="maropost-form_message text-center">&nbsp;</div>
             </div>
           </div>
         </div>
@@ -43,8 +67,6 @@
 <div id="newsletter_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" class="modal fade newseletter-box">
   <div role="document" class="modal-dialog modal-lg modal-dialog-centered">
 
-      <div class="modal-body" id="newsletter_modal_content">
-
-      </div>
+    <div class="modal-body" id="newsletter_modal_content"></div>
   </div>
 </div>

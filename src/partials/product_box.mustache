@@ -1,13 +1,17 @@
-<article class="product_box" style="background-color:{{colorCode}};" id="product_{{id}}">
-  <h5 class="hiphen">{{name}}</h5>
-  <div class="img--wrapper">
-    <img src="{{{img}}}" alt="" class="img-fluid">
+<div class="product_box slidable" id="slidable_{{id}}">
+  <div class="slidable--wrapper {{slidefrom}}">
+    <article style="background-color:{{colorCode}};" id="product_{{id}}">
+      <h5 class="hiphen">{{name}}</h5>
+      <div class="img--wrapper">
+        <img src="{{{img}}}" alt="" class="img-fluid" />
+      </div>
+      <ul>
+        {{#props}}
+          <li><span>-</span> {{.}}</li>
+        {{/props}}
+      </ul>
+      <a class="button btn btn-primary btn-sm quickview" href="#" data-text="quickview">Quickview</a>
+      <span style="display: none" class="quick-look" >{{id}}/quickView</span>
+    </article>
   </div>
-  <ul>
-    {{#props}}
-      <li><span>-</span> {{.}}</li>
-    {{/props}}
-  </ul>
-  <a class="button btn btn-primary btn-sm quickview" href="#">Quickview</a>
-  <span style="display: none" class="quick-look">{{id}}/quickView</span>
-</article>
+</div>

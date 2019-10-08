@@ -13,16 +13,15 @@
         background-color: gray;
       }
     }
-
   }
-@media (min-width: 992px) {
-  #follow_3, #follow_3_trigger {
-    margin-top: -300px;
-    position: relative;
-    z-index: 9;
+  @media (min-width: 992px) {
+    #slidable_271810 {
+      margin-top: -300px;
+      position: relative;
+      z-index: 9;
+    }
   }
 
-}
   .winter--pitch {
     &:after {
       background-color: #eef5f8;
@@ -49,7 +48,8 @@
     width: 100%;
     height: 350px;
     position: relative;
-    @media (min-width: 768px)  {
+    z-index: 9;
+    @media (min-width: 768px) {
       height: 700px;
     }
 

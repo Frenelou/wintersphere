@@ -2,26 +2,25 @@
   <div class="row " id="part_3_superguide">
     <div class="col-md-7">
       {{#video_3}}
-      {{> video }}
+        {{> video }}
       {{/video_3}}
-      <p class="winter--pitch w-400">
+      <p class="winter--pitch w-400 nofade" data-text="p3">
         The lightweight SCOTT Superguide is mobile and comfortable on the ups, with solid, precise stability on the downs. The Rear Hook Walk System is simple, strong, and dependable, allowing a high range of friction-free motion for walking
         with powerful energy transfer.
       </p>
       <section>
-        <div class="img--wrapper slidable" id="boot_slide">
-          <img class="img-fluid w-100" src="wintersphere-19-mkt-page-02v04-assets/part_3_boots.png" alt="">
+        <div class="img--wrapper" id="boot_slide">
+          <a data-toggle="modal" href="#" class="show-more" id="show--superguide">
+            <img class="img-fluid w-100 scaledown" src="wintersphere-19-mkt-page-02v04-assets/part_3_boots.png" alt="">
+            {{> showMore }}
+          </a>
         </div>
       </section>
     </div>
     <div class="col-md-5">
-      <div id="follow_2_trigger">
-        <div class="follow-me" id="follow_2" data-parent="follow_2_trigger" data-offset="300" data-duration="100">
-          {{#product3}}
-          {{> product_box }}
-          {{/product3}}
-        </div>
-      </div>
+      {{#product3}}
+        {{> product_box }}
+      {{/product3}}
     </div>
   </div>
 </div>

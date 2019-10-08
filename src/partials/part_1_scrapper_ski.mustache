@@ -1,19 +1,14 @@
 <div class="container">
   <div class="row " id="part_1_scrapper_ski">
     <div class="col-sm-12">
-      <p class="winter--pitch w-400">With outstanding feedback and success in its first season, the award winning SCOTT Scrapper 115 has become the benchmark for the quiver freeski-ski.</p>
-      <a class="show-more " data-toggle="modal" href="#" id="show--scrapper_ski">
+      <p class="winter--pitch w-400" data-text="p1">With outstanding feedback and success in its first season, the award winning SCOTT Scrapper 115 has become the benchmark for the quiver freeski-ski.</p>
+      <a class="show-more" data-toggle="modal" href="#" id="show--scrapper_ski">
         <div style="background-image: url(wintersphere-19-mkt-page-02v04-assets/scrapper_ski.png);" ></div>
-        <!-- <img src="wintersphere-19-mkt-page-02v04-assets/scrapper_ski.png" alt="" class="scaledown" id="show--scrapper_ski_img"> -->
         {{> showMore }}
       </a>
-      <div id="follow_0_parent">
-        <div class="follow-me" id="follow_0" data-parent="show--scrapper_ski" data-offset="400" data-duration="200">
-          {{#product1}}
-            {{> product_box }}
-          {{/product1}}
-        </div>
-      </div>
+      {{#product1}}
+        {{> product_box }}
+      {{/product1}}
       <hr>
     </div>
   </div>

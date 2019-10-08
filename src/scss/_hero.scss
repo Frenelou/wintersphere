@@ -1,27 +1,93 @@
 #part_1_hero {
-  background-image: url("../wintersphere-19-mkt-page-02v04-assets/hero_bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  @media (max-width: 767px) {
-    min-height: 80vh;
-    }
-    @media (min-width: 992px) {
+  @media (min-width: 768px) {
+    min-height: 50vw;
+  }
 
+  h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 100px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    font-family: "brandon-grotesque",Arial,Helvetica,sans-serif;
+    @media (min-width: 768px) {
+      font-size: 8rem;
     }
-
-  @media (min-width: 992px) {
-    // background-attachment: fixed;
-    height: 50vw;
   }
 
   &--content {
-    display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     height: inherit;
+  }
+}
+
+#hero_cta {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &:hover {
+    cursor: pointer;
+    cursor: hand;
+  }
+
+  .fa-stack {
+    transition: all 0.2s ease-in-out;
+    vertical-align: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .fa-circle {
+    font-size: 3rem;
+    @media (min-width: 768px) {
+      font-size: 6rem;
+      margin-right: 0;
+    }
+  }
+
+  .fa-play {
+    font-size: 2rem;
+    @media (min-width: 768px) {
+      font-size: 5rem;
+    }
+  }
+}
+
+.videoStop {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  display: none;
+  font-size: 3em;
+
+  &:focus, &:active {
+    outline: 0;
+  }
+  @media (min-width: 768px) {
+    font-size: 6em;
+  }
+}
+
+.fa-times {
+  color: #0099ff;
+
+  &:hover {
+    cursor: pointer;
+    cursor: hand;
   }
 }

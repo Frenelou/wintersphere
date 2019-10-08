@@ -21,7 +21,7 @@
 #show-more-modal {
   &--main {
     @media (min-width: 992px) {
-      display: -webkit-flex;
+      
       display: -ms-flex;
       display: flex;
     }
@@ -88,7 +88,7 @@
     z-index: 9;
 
     &.findSizeOn {
-      display: -webkit-flex;
+      
       display: -ms-flex;
       display: flex;
       flex-direction: column;

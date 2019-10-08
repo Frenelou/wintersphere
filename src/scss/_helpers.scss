@@ -2,13 +2,12 @@
   display: none;
 }
 
-div[id^=part_] {
-  h2,
-  h3,
-  h4,
-  p {
-    transition-delay: 3s;
-    transition: opacity 0.5s;
+h2,
+h3,
+h4,
+p {
+  &:not(.nofade) {
+    transition: opacity 0.25s;
     opacity: 0;
 
     &.fadeText {

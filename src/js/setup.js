@@ -1,6 +1,7 @@
 $(document).ready(function() {
-  showMore.setup();
-  
-  scrollMagicWintersphere.setup();
   maropostForm.setup();
+  scrollMagicWintersphere.setup();
+  videoActions.setup();
+  showMore.setup();
+  backToTop.setup();
 });

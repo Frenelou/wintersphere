@@ -1,6 +1,12 @@
 #part_2_vertic_jacket {
-  .product_box{margin-left: 0;}
+  .product_box {
+    margin-left: 0;
+    @media (min-width: 992px) {
+      width: 400px;
+    }
+  }
 }
+
 .gradient--gray-up {
   background-color: #f0f0f1;
 }
