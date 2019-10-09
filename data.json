@@ -1,7 +1,22 @@
 {
+  "text": {
+    "title": "Winter is around the corner",
+    "subtitle": "Dicover the new SCOTT Freeride collection",
+    "p1": "With outstanding feedback and success in its first season, the award winning SCOTT Scrapper 115 has become the benchmark for the quiver freeski-ski.",
+    "p2": "The slick design and the muted colorways of the SCOTT Vertic GTX 3L Stretch Jacket hides technical features and comfort. Constructed using a GORE-TEX® membrane, it stands up to the worst winter weather.",
+    "p3": "The lightweight SCOTT Superguide is mobile and comfortable on the ups, with solid, precise stability on the downs. The Rear Hook Walk System is simple, strong, and dependable, allowing a high range of friction-free motion for walking with powerful energy transfer.",
+    "p4": "The SCOTT Vapor goggle is the latest addition to the range. The totally new semi-rimless frame has been designed to create a perfect airflow inside the lens to avoid fogging.",
+    "p5": "The SCOTT Patrol E1 22 is the smaller version of our flagship Patrol E1 electronic avalanche backpack family. With a smaller volume but with all the same features as the 30 litre, this pack is perfect for quick ascents or heli-skiing outings.",
+    "p6": "The SCOTT AirFlex Polar Vest Protector features the new and innovative AirFlex D3O plate with a SCOTT specific design. Enjoy maximum comfort, optimal airflow thanks to strategically placed vents as well as the protective performance of this tough tested plate. In combination with PolarTec fabric, the SCOTT AirFlex Polar Vest Protector keeps you warm, whatever your adventure.",
+    "nl_title": "SIGN UP FOR OUR NEWSLETTER",
+    "nl_subtitle": "READY FOR WINTER? SUBSCRIBE TO RECEIVE OUR EXCLUSIVE OFFERS, STORIES AND VIDEOS DIRECTLY IN YOUR INBOX.",
+    "nl_pp": "<p class=\"nofade\">I agree to receive the SCOTT Wintersports newsletter. Our newsletter informs you about sport-related topics, our products, offers and our company. You can unsubscribe from the newsletter at any time. Information on the content, the logging of your registration, the distribution via the provider Maropost, statistical evaluation as well as your disclaimer possibilities are given in our < a href = \"/company/policy\" > Privacy Policy < /a>.</p > ",
+    "nl_placeHolder": "Your email address",
+    "nl_cta": "Subscribe"
+  },
   "product1": {
     "name": "scrapper ski 115",
-    "color": "blue-gray",
+    "slidefrom": "slide-right",
     "colorCode": "#6d7892",
     "props": ["Easy turn initiation", "Optimal Floatation", "Performance tuning"],
     "img": "wintersphere-19-mkt-page-02v04-assets/product_scrapper_ski.png",
@@ -9,15 +24,15 @@
   },
   "product2": {
     "name": "Vertix gtx 3L strech Jacket",
-    "color": "gray",
+    "slidefrom": "slide-left",
     "colorCode": "#636873",
     "props": ["GORE-TEX® 3 Layer fabrics", "Lightweight to access the steepest couloirs ", "GORE-TEX stretch inserts for enhanced mobility "],
     "img": "wintersphere-19-mkt-page-02v04-assets/product_vertic_gtx_jacket.png",
-    "id": "272484"
+    "id": "2725395517007"
   },
   "product3": {
     "name": "SUPERGUIDE CARBON SKI BOOT",
-    "color": "",
+    "slidefrom": "slide-right",
     "colorCode": "#71694f",
     "props": ["Better flex in ski and walk mode", "Buckle ratchet locking system", "Automatic lock when skiing down"],
     "img": "wintersphere-19-mkt-page-02v04-assets/product_superguide_boot.png",
@@ -25,7 +40,7 @@
   },
   "product4": {
     "name": "vapor goggle",
-    "color": "",
+    "slidefrom": "slide-left",
     "colorCode": "#78869e",
     "props": ["Amplifier:enhances contrast&clarity", "100% UV Protection", "Revolutionary Air Management 2.0"],
     "img": "wintersphere-19-mkt-page-02v04-assets/product_vapor_goggle.png",
@@ -33,7 +48,7 @@
   },
   "product5": {
     "name": "SCOTT PATROL E1 22 BACKPACK KIT",
-    "color": "",
+    "slidefrom": "slide-right",
     "colorCode": "#f56e67",
     "props": ["SCOTT Alpride E1 Airbag System", "One of the lightest on the market", "1280g Full system weight"],
     "img": "wintersphere-19-mkt-page-02v04-assets/product_patrol_backpack.png",
@@ -41,42 +56,59 @@
   },
   "product6": {
     "name": "AIRFLEX PRO MEN'S VEST PROTECTOR",
-    "color": "",
+    "slidefrom": "slide-right",
     "colorCode": "#d8784f",
     "props": ["Level 1 Protection", "AirFlex Technology with D3O®", " Polartec powergrid fabric"],
     "img": "wintersphere-19-mkt-page-02v04-assets/product_airflex_vest.png",
     "id": "271913"
   },
+  "video_0": {
+    "poster": "wintersphere-19-mkt-page-02v04-assets/hero_bg.png",
+    "id": "video_0",
+    "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/SCOTT-Brand-MOVIE-1920x1080",
+    "class": "v-100 col-sm-12 no-padding",
+    "alt": "",
+    "autoplay":false,
+    "standalone":true,
+    "unmute":true,
+    "scrim":true
+
+  },
   "video_1": {
     "poster": "wintersphere-19-mkt-page-02v04-assets/video_cover_vertic.png",
     "id": "video_1",
     "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/VERTIC_CONQUER_THE_ELEMENTS_1920x1080",
-    "class":"v-100",
-    "alt":""
+    "class": "v-100",
+    "alt": "",
+    "autoplay":true
 
   },
   "video_2": {
     "poster": "wintersphere-19-mkt-page-02v04-assets/video_cover_vapor.png",
     "id": "video_2",
     "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/Scott_Vapor_master_v01_1920x1080",
-    "class":"v-100",
-    "alt":""
+    "class": "v-100",
+    "alt": "",
+    "autoplay":true
 
   },
   "video_3": {
     "poster": "wintersphere-19-mkt-page-02v04-assets/boots_video.png",
     "id": "video_3",
     "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/Scott-Freeride-Zurs_skiboots-768x432",
-    "class":"",
-    "alt":""
+    "class": "",
+    "alt": "",
+    "autoplay":true,
+    "standalone":true
 
   },
   "video_4": {
     "poster": "wintersphere-19-mkt-page-02v04-assets/scrapper_cover.png",
     "id": "video_4",
     "url": "https://assets.scott-sports.com/pages/wintersphere_2019/video/Scott-Freeride-Zurs_scrapper-1920x1080",
-    "class":"v-100",
-    "alt":""
+    "class": "v-100",
+    "alt": "",
+    "autoplay":true
 
   }
 }

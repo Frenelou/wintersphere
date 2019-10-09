@@ -1,0 +1,59 @@
+wintersphereText({
+  "text": {
+    "title": "L'inverno è dietro l'angolo",
+    "subtitle": "Scopri la nuova collezione SCOTT Freeride",
+    "p1": "Con un feedback e un successo straordinari già dalla loro prima stagione, i premiati SCOTT Scrapper 115 sono diventati il punto di riferimento per le discipline freeride.",
+    "p2": "Il design elegante e le combinazioni di colori della giacca SCOTT Vertic GTX 3L Stretch nascondono eccellenti caratteristiche tecniche e comfort. Realizzata con una membrana in GORE-TEX®, resiste alle più ostili condizioni invernali.",
+    "p3": "Gli SCOTT Superguide sono leggeri, mobili e confortevoli sulle salite; stabili, solidi e precisi sulle discese. Il semplice e affidabile sistema di camminata con gancio posteriore permette un’ampia gamma di movimenti senza attriti e una perfetta trasmissione di energia.",
+    "p4": "La maschera SCOTT Vapor è l’ultima aggiunta alla gamma. La montatura semi-rimless è stata progettata per creare un flusso d’aria perfetto all’interno della lente per evitare l’appannamento.",
+    "p5": "Lo SCOTT Patrol E1 22 è la versione più piccola del nostro zaino antivalanga di punta Patrol E1. Con un volume minore ma con tutte le stesse caratteristiche dello zaino da 30 litri, è perfetto per uscite in giornata e per praticare eliski.",
+    "p6": "Il gilet protettivo SCOTT AirFlex Polar ha una nuova e innovativa piastra AirFlex D3O con design specifico di SCOTT. Goditi il massimo comfort, il flusso d’aria ottimale grazie a prese d’aria posizionate strategicamente, e la protezione offerta da questa piastra ampiamente testata. In combinazione con il tessuto PolarTec, il gilet protettivo SCOTT AirFlex Polar ti mantiene caldo durante qualsiasi avventura.",
+    "nl_title_subtitle": "ISCRIVITI ALLA NOSTRA NEWSLETTER",
+    "nl_subtitle": "SEI PRONTO AD AFFRONTARE L’INVERNO? ISCRIVITI PER RICEVERE LE NOSTRE OFFERTE ESCLUSIVE, LE STORIE E I VIDEO DIRETTAMENTE NELLA TUA CASELLA DELLA POSTA IN ARRIVO.",
+    "nl_pp": "Accetto di ricevere la newsletter di SCOTT Wintersports. La newsletter ti informa su argomenti relativi allo sport, ai nostri prodotti, alle nostre offerte e alla nostra azienda. Puoi annullare l'iscrizione alla newsletter in qualsiasi momento. Le informazioni sui contenuti, sulla registrazione, sulla distribuzione tramite il provider Maropost, sulle valutazioni statistiche e sulle possibilità di esclusione delle responsabilità sono consultabili nella nostra <a href=&quot;/company/policy&quot;>Informativa sulla privacy</a>.",
+    "nl_placeholder": "Il tuo indirizzo e-mail",
+    "nl_cta": "Iscriviti",
+    "nl_email": "e-mail",
+    "nl_country": "Paese",
+    "shop_the_look": "Acquista il look",
+    "cta_men": "COLLEZIONE UOMO",
+    "cta_women": "COLLEZIONE DONNA",
+    "freeride": "FREERIDE",
+    "all_mountain": "ALL MOUNTAIN",
+    "ski_touring": "SCIAPLINISMO",
+    "collections_title": "Scopri le nostre collezioni",
+    "quickview": "Visualizzazione rapida"
+
+  },
+  "products": [{
+      "name": "scrapper ski 115",
+      "props": ["Entrata facile in curva", "Flottazione ottimale", "Ottimizzazione delle prestazioni"],
+      "id": "271785"
+    },
+    {
+      "name": "Vertix gtx 3L strech Jacket",
+      "props": ["Tessuti GORE-TEX® a 3 strati", "Leggero per accedere ai canaloni più ripidi", "Inserti elasticizzati in GORE-TEX per una maggiore mobilità"],
+      "id": "2725395517007"
+    },
+    {
+      "name": "SUPERGUIDE CARBON SKI BOOT",
+      "props": ["Miglior flessione in modalità sci e camminata", "Sistema di bloccaggio con gancio a cricchetto", "Bloccaggio automatico in fase di sciata"],
+      "id": "272319"
+    },
+    {
+      "name": "vapor goggle",
+      "props": ["Amplifier: migliora i contrasti e la chiarezza", "100 % di protezione dai raggi UV", "Revolutionary Air Management 2.0"],
+      "id": "271810"
+    },
+    {
+      "name": "SCOTT PATROL E1 22 BACKPACK KIT",
+      "props": ["Sistema airbag SCOTT Alpride E1", "Uno dei più leggeri sul mercato", "Peso complessivo del sistema 1.280 g"],
+      "id": "272628"
+    },
+    {
+      "name": "AIRFLEX PRO MEN'S VEST PROTECTOR",
+      "props": ["Protezione di livello 1", "Tecnologia AirFlex con D3O®", "Tessuto Polartec Powergrid"],
+      "id": "271913"
+    },
+  ]
+})

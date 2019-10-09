@@ -165,7 +165,7 @@ var maropostForm = {
     else {
       if (!(window.location.href.indexOf("dbl-opt") >= 0))
         return window.location.href.indexOf("contact_fields") >= 0
-          ? ["de", "at"].indexOf(currLang) >= 0
+          ? (["de", "at"].indexOf(currLang) >= 0 && currCountry !== 'ch')
             ? maropostForm.showMessage("double")
             : maropostForm.showMessage("success")
           : void $(".maropost-form").show();

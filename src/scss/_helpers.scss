@@ -16,6 +16,15 @@ p {
   }
 }
 
+#quickview--box--wrapper, #quickview-main {
+  h2,
+  h3,
+  h4,
+  p {
+    opacity: 1;
+  }
+}
+
 #singleslotpage .cms_disp-img_slot:first-child {
   hr {
     border-width: 0;

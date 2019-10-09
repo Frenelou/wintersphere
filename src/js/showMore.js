@@ -18,12 +18,14 @@ var showMore = {
   },
   quickViewBack: function() {
     $(".quickview-back").click(function(event) {
+      event.preventDefault();
       if ($("#quickview--box--wrapper").hasClass("findSizeOn")) {
         $("#quickview--box--wrapper").toggleClass("findSizeOn");
       } else {
         $("#quickview--box--wrapper").hide();
       }
       $("#quickview--box--footer").hide();
+      return false;
     });
   },
   bindFindYourSize: function() {
@@ -78,6 +80,7 @@ var showMore = {
           console.log(errorThrown);
         }
       });
+      return false;
     });
   },
   ajaxSuccess: function(data) {
@@ -161,7 +164,6 @@ var showMore = {
     );
   },
   fillModal: function() {
-    console.log(showMore.currentProduct);
     $(`#related_products_box_${showMore.currentProduct} .article`).each(
       function(index, el) {
         $(el)

@@ -1,0 +1,59 @@
+wintersphereText({
+  "text": {
+    "title": "Winter is around the corner",
+    "subtitle": "Dicover the new SCOTT Freeride collection",
+    "p1": "With outstanding feedback and success in its first season, the award winning SCOTT Scrapper 115 has become the benchmark for the quiver freeski-ski.",
+    "p2": "The slick design and the muted colorways of the SCOTT Vertic GTX 3L Stretch Jacket hides technical features and comfort. Constructed using a GORE-TEX® membrane, it stands up to the worst winter weather.",
+    "p3": "The lightweight SCOTT Superguide is mobile and comfortable on the ups, with solid, precise stability on the downs. The Rear Hook Walk System is simple, strong, and dependable, allowing a high range of friction-free motion for walking with powerful energy transfer.",
+    "p4": "The SCOTT Vapor goggle is the latest addition to the range. The totally new semi-rimless frame has been designed to create a perfect airflow inside the lens to avoid fogging.",
+    "p5": "The SCOTT Patrol E1 22 is the smaller version of our flagship Patrol E1 electronic avalanche backpack family. With a smaller volume but with all the same features as the 30 litre, this pack is perfect for quick ascents or heli-skiing outings.",
+    "p6": "The SCOTT AirFlex Polar Vest Protector features the new and innovative AirFlex D3O plate with a SCOTT specific design. Enjoy maximum comfort, optimal airflow thanks to strategically placed vents as well as the protective performance of this tough tested plate. In combination with PolarTec fabric, the SCOTT AirFlex Polar Vest Protector keeps you warm, whatever your adventure.",
+    "nl_title_subtitle": "SIGN UP FOR OUR NEWSLETTER",
+    "nl_subtitle": "READY FOR WINTER? SUBSCRIBE TO RECEIVE OUR EXCLUSIVE OFFERS, STORIES AND VIDEOS DIRECTLY IN YOUR INBOX.",
+    "nl_pp": "I agree to receive the SCOTT Wintersports newsletter. Our newsletter informs you about sport-related topics, our products, offers and our company. You can unsubscribe from the newsletter at any time. Information on the content, the logging of your registration, the distribution via the provider Maropost, statistical evaluation as well as your disclaimer possibilities are given in our <a href=&quot;/company/policy&quot;>Privacy Policy</a>.",
+    "nl_placeholder": "Your email address",
+    "nl_cta": "Subscribe",
+    "nl_email": "email",
+    "nl_country": "country",
+    "shop_the_look": "Shop the look",
+    "cta_men": "COLLECTION MEN",
+    "cta_women": "COLLECTION WOMEN",
+    "freeride": "FREERIDE",
+    "all_mountain": "ALL MOUNTAIN",
+    "ski_touring": "SKI TOURING",
+    "collections_title": "Discover our collections",
+    "quickview": "Quickview"
+
+  },
+  "products": [{
+      "name": "scrapper ski 115",
+      "props": ["Easy turn initiation", "Optimal Floatation", "Performance tuning"],
+      "id": "271785"
+    },
+    {
+      "name": "Vertix gtx 3L strech Jacket",
+      "props": ["GORE-TEX® 3 Layer fabrics", "Lightweight to access the steepest couloirs", "GORE-TEX stretch inserts for enhanced mobility"],
+      "id": "2725395517007"
+    },
+    {
+      "name": "SUPERGUIDE CARBON SKI BOOT",
+      "props": ["Better flex in ski and walk mode", "Buckle ratchet locking system", "Automatic lock when skiing down"],
+      "id": "272319"
+    },
+    {
+      "name": "vapor goggle",
+      "props": ["Amplifier:enhances contrast&clarity", "100% UV Protection", "Revolutionary Air Management 2.0"],
+      "id": "271810"
+    },
+    {
+      "name": "SCOTT PATROL E1 22 BACKPACK KIT",
+      "props": ["SCOTT Alpride E1 Airbag System", "One of the lightest on the market", "1280g Full system weight"],
+      "id": "272628"
+    },
+    {
+      "name": "AIRFLEX PRO MEN'S VEST PROTECTOR",
+      "props": ["Level 1 Protection", "AirFlex Technology with D3O®", "Polartec powergrid fabric"],
+      "id": "271913"
+    },
+  ]
+})

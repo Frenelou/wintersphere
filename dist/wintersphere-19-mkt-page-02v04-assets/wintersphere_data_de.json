@@ -1,0 +1,59 @@
+wintersphereText({
+  "text": {
+    "title": "Der Winter steht vor der Tür",
+    "subtitle": "Entdecke die neue SCOTT Freeride Kollektion",
+    "p1": "Mit herausragendem Feedback und Erfolg in seiner ersten Saison ist der preisgekrönte SCOTT Scrapper 115 zum Benchmark im Freeski-Quiver geworden.",
+    "p2": "Das smarte Design und die dezenten Farben der SCOTT Vertic GTX 3L Stretch Jacke bieten technische Performance und Komfort. Dank der GORE-TEX® Membran hält sie auch dem heftigsten Winterwetter stand.",
+    "p3": "Der leichte SCOTT Superguide bietet bergauf Bewegungsfreiheit sowie Komfort und bergab eine solide, präzise Stabilität. Die rückseitige Ski-/Gehfunktion-Schnalle ist leicht bedienbar, zuverlässig und sicher. Das System garantiert eine leistungsstarke reibungsfreie Energieübertragung beim Gehen.",
+    "p4": "Die SCOTT Vapor Brille ist das neueste Mitglied der Produktfamilie. Der völlig neue halb-randlose Rahmen wurde entwickelt, um einen perfekten Luftstrom unter der Scheibe zu gewährleisten und so das Beschlagen der Scheiben zu vermeiden.",
+    "p5": "Der SCOTT Patrol E1 22 ist die kleinere Version aus unserer renommierten Produktreihe elektronischer Lawinenrucksäcke Patrol E1. Dieser Rucksack verfügt über ein kleineres Volumen, jedoch über dieselben Eigenschaften wie sein großer Bruder mit 30 l, und ist perfekt für schnelle Aufstiege oder kurze Heli-Trips geeignet.",
+    "p6": "Die SCOTT AirFlex Polar Protektorweste verfügt über die neue und innovative AirFlex D3O-Schutzplatte mit spezifischem SCOTT-Design. Genieße dank der strategisch platzierten Öffnungen und der Schutzleistung dieser gründlich getesteten Schutzplatte maximalen Komfort und optimale Belüftung. In Kombination mit dem PolarTec-Material hält dich die SCOTT AirFlex Polar Protektorweste während deiner Abenteuer angenehm warm.",
+    "nl_title_subtitle": "MELDE DICH FÜR UNSEREN NEWSLETTER AN",
+    "nl_subtitle": "BEREIT FÜR DEN WINTER? MELDE DICH AN, UM UNSERE EXKLUSIVEN ANGEBOTE, STORIES UND VIDEOS DIREKT IN DEINEM POSTEINGANG ZU ERHALTEN.",
+    "nl_pp": "Ich möchte den SCOTT Wintersports Newsletter erhalten. Unser Newsletter informiert dich über Sport-Themen, unsere Produkte und Angebote sowie unser Unternehmen. Du kannst dich jederzeit vom Newsletter abmelden. Informationen über den Inhalt, die Protokollierung deiner Registrierung, die Verteilung über den Provider Maropost, statistische Auswertungen sowie deine Optionen zum Haftungsausschluss, findest du in unseren <a href=&quot;/company/policy&quot;>Datenschutzbestimmungen</a>.",
+    "nl_placeholder": "Deine E-Mail-Adresse",
+    "nl_cta": "Abonnieren",
+    "nl_email": "E-Mail",
+    "nl_country": "Land",
+    "shop_the_look": "Den Look shoppen",
+    "cta_men": "MEN‘S COLLECTIONS",
+    "cta_women": "WOMEN‘S COLLECTIONS",
+    "freeride": "FREERIDE",
+    "all_mountain": "ALL MOUNTAIN",
+    "ski_touring": "SKI TOURING",
+    "collections_title": "Entdecke unsere Kollektionen",
+    "quickview": "Schnellansicht"
+
+  },
+  "products": [{
+      "name": "scrapper ski 115",
+      "props": ["Leichte Schwungeinleitung", "Optimales Treiben", "Performance-Optimierung"],
+      "id": "271785"
+    },
+    {
+      "name": "Vertic GTX 3L Stretch Jacke",
+      "props": ["Dreilagiges GORE-TEX®-Material", "Leicht, damit du die steilsten Felswände erklimmen kannst", "GORE-TEX Stretch-Einsätze für mehr Bewegungsfreiheit"],
+      "id": "2725395517007"
+    },
+    {
+      "name": "SUPERGUIDE CARBON SKISCHUH",
+      "props": ["Besserer Flex beim Skifahren und Gehen", "Schnallen-Verschluss-System", "Automatisches Einrasten bei der Abfahrt"],
+      "id": "272319"
+    },
+    {
+      "name": "Vapor Brille",
+      "props": ["Amplifier: für stärkeren Kontrast und Klarheit", "100 % UV-Schutz", "Revolutionary Air Management 2.0"],
+      "id": "271810"
+    },
+    {
+      "name": "SCOTT PATROL E1 22 RUCKSACK-KIT",
+      "props": ["SCOTT Alpride E1 Airbag-System", "Einer der leichtesten Rucksäcke auf dem Markt", "1280 g Gesamtgewicht des Systems"],
+      "id": "272628"
+    },
+    {
+      "name": "AIRFLEX PRO PROTEKTORWESTE FÜR HERREN",
+      "props": ["Level 1 Protection", "AirFlex-Technologie mit D3O®", "Polartec PowerGrid-Material"],
+      "id": "271913"
+    },
+  ]
+})
