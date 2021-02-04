@@ -77,14 +77,6 @@
       }
     }
 
-    #newsletter-box--wrapper & {
-      @media (min-width: 768px) and (max-width: 991px) {
-        width: 80%;
-      }
-      @media (min-width: 992px) {
-        width: 40%;
-      }
-    }
 
     &--modal-close {
       display: none;
@@ -126,7 +118,6 @@
       }
 
       label {
-        text-transform: uppercase;
         letter-spacing: 0.12rem;
         padding-left: 0;
         @media (max-width: 767px) {

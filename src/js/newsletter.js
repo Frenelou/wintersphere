@@ -14,9 +14,9 @@ var maropostForm = {
   },
   modalActions: () => {
     $("#newsletter_modal").on("show.bs.modal hidden.bs.modal", e => {
-    //   clearTimeout(this.modalCountdown);
-      // $("#newsletter-box").detach().appendTo(e.type !== "show.bs.modal" ? "#newsletter_modal_content" : "#newsletter-box--wrapper");
-    //   if (!!this.visited ) $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
+      clearTimeout(this.modalCountdown);
+      $("#newsletter-box").detach().appendTo(e.type !== "show.bs.modal" ? "#newsletter_modal_content" : "#newsletter-box--wrapper");
+      if (!!this.visited) $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
     })
   },
   checkPolicy: () => {

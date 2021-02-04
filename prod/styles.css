@@ -691,12 +691,6 @@ article {
     @media (min-width: 992px) {
       .modal.in #newsletter-box {
         width: 70%; } }
-    @media (min-width: 768px) and (max-width: 991px) {
-      #newsletter-box--wrapper #newsletter-box {
-        width: 80%; } }
-    @media (min-width: 992px) {
-      #newsletter-box--wrapper #newsletter-box {
-        width: 40%; } }
     #newsletter-box--modal-close {
       display: none; }
     @media (max-width: 767px) {
@@ -732,7 +726,6 @@ article {
       font-size: 1.2rem;
       color: #999; }
     #newsletter-box form.maropost-form label {
-      text-transform: uppercase;
       letter-spacing: 0.12rem;
       padding-left: 0; }
       @media (max-width: 767px) {
