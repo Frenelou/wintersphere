@@ -1,11 +1,8 @@
 <div class="container-fluid newsletter-box" id="newsletter">
   <div class="row">
     <div class="col-sm-12">
-      <hr />
-      <div id="newsletter-box--wrapper">
-        <div id="newsletter-box">
-          <div class="panel panel-default">
-            <div class="panel-body">
+      <div id="newsletter-box--wrapper" class="div card w-50 mx-auto rounded p-3 my-5 shadow">
+            <div class="card-body text-center">
               <button
                 type="button"
                 data-dismiss="modal"
@@ -15,7 +12,7 @@
               >
                 <i class="fal fa-times fa-2x"></i>
               </button>
-              <h3 class="hiphen text-center nofade" data-text="nl_title">
+              <h3 class="hiphen text-center nofade my-4" data-text="nl_title">
                 Sign up for our newsletter
               </h3>
               <p class="text-center nofade" data-text="nl_subtitle">
@@ -27,59 +24,24 @@
                 class="maropost-form"
                 method="post"
               >
+              <div class="form-group mt-5">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
                 <div class="form-group">
-                  <div class="col-md-8">
-                    <label for="contact_fields_email" data-text="nl_email"
-                      >Email</label
-                    >
-                    <input
-                      type="text"
-                      name="contact_fields[email]"
-                      placeholder="Your Email Address"
-                      id="contact_fields_email"
-                    />
-                  </div>
-                  <div class="col-md-4">
-                    <label for="custom_fields_country" data-text="nl_country"
-                      >Country</label
-                    >
-                    <div class="select-wrapper">
-                      <select
-                        name="custom_fields[country]"
-                        id="custom_fields_country"
-                      ></select>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group col-sm-12">
                   <input
                     value="Subscribe"
                     type="submit"
                     name="commit"
-                    class="btn btn-default btn-block"
+                    class="btn btn-primary btn-block"
                     id="newsletter_form_submit"
                     disabled
                   />
-                </div>
-
-                <div class="form-group">
-                  <div class="col-sm-12" id="custom_fields_privacy--wrapper">
-                    <label for="custom_fields_privacy" class="col-md-4 hidden"
-                      >Privacy Policy</label
-                    >
-                    <input
-                      type="hidden"
-                      name="custom_fields[privacy]"
-                      class="input-md me"
-                      required
-                    />
-                    <input
-                      value="1"
-                      type="checkbox"
-                      name="custom_fields[privacy]"
-                      id="custom_fields_privacy"
-                    />
-                    <p class="nofade" data-text="nl_pp" id="nl_pp">
+                  <div class="col-sm-12 text-left mt-4" id="custom_fields_privacy--wrapper">
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input mr-4" type="checkbox" id="custom_fields_privacy" value="option1">
+                    <label class="form-check-label" for="custom_fields_privacy">
+                    <span class="nofade" data-text="nl_pp" id="nl_pp" class="form-check-label" for="custom_fields_privacy">
                       I agree to receive the SCOTT Wintersports newsletter. Our
                       newsletter informs you about sport-related topics, our
                       products, offers and our company. You can unsubscribe from
@@ -88,46 +50,12 @@
                       provider Maropost, statistical evaluation as well as your
                       disclaimer possibilities are given in our
                       <a href="">Privacy Policy</a>.
-                    </p>
+                    </span>
+                  </label>
+                  </div>
                   </div>
                 </div>
 
-                <div class="form-group hidden">
-                  <label
-                    for="custom_fields_country_isocode_alpha2"
-                    class="col-md-4"
-                    >Country isocode alpha2</label
-                  >
-                  <input
-                    type="text"
-                    name="custom_fields[country_isocode_alpha2]"
-                    id="custom_fields_country_isocode_alpha2"
-                  />
-                  <label for="custom_fields_language_preferred" class="col-md-4"
-                    >Preferred communication language</label
-                  >
-                  <select
-                    name="custom_fields[language_preferred]"
-                    id="custom_fields_language_preferred"
-                  ></select>
-                  <label for="custom_fields_do_ski" class="col-md-4"
-                    >Do ski</label
-                  >
-                  <input
-                    type="hidden"
-                    name="custom_fields[do_ski]"
-                    id="custom_fields_language_preferred"
-                    class="input-md me"
-                    required
-                  />
-                  <input
-                    value="1"
-                    type="checkbox"
-                    name="custom_fields[do_ski]"
-                    id="custom_fields_do_ski"
-                    checked
-                  />
-                </div>
               </form>
 
               <div class="maropost-form_message-fail text-danger text-center">
@@ -138,7 +66,6 @@
               </div>
               <div class="maropost-form_message text-center">&nbsp;</div>
             </div>
-          </div>
         </div>
       </div>
       <hr />

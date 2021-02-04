@@ -148,7 +148,6 @@ var scrollMagicWintersphere = {
     $("#hero_cta h2").text(this.scrim[currLang].h2 || "Conquer the Elements");
     $("#hero_cta h2").fadeIn("slow");
 
-    document.querySelector("#contact_fields_email").placeholder = this.scrim[currLang].placeholder;
     let o = document.createElement("script");
 
     o.src = `wintersphere-19-mkt-page-02v04-assets/wintersphere_data_${currLang}.json`;
@@ -185,7 +184,7 @@ var scrollMagicWintersphere = {
       fadeText = new ScrollMagic.Scene({
         triggerElement: el,
         offset: -200
-      }).on("start", () => el.classList.add("in"))
+      }).on("start", () => el.classList.add("show"))
         .addTo(controller)
     ),
   resizeToggle: () => {

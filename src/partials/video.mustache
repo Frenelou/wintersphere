@@ -1,7 +1,6 @@
 {{^standalone}}
-  <div class="container-fluid no-padding">
-    <div class="row-fluid ">
-      <div class="col-sm-12 no-padding">
+    <div class="row no-gutters">
+      <div class="col-sm-12">
         {{/standalone}}
         <video id="{{id}}" class="video {{^autoplay}}noPlay{{/autoplay}}" poster="{{{poster}}}" preload="auto" {{#autoplay}} autoplay playsinline loop="loop" {{/autoplay}} {{^unmute}} muted="muted" {{/unmute}} >
           <source src="{{{url}}}.mp4" type="video/mp4">
@@ -10,7 +9,7 @@
         {{^autoplay}}
           <div id="hero_cta">
             {{#scrim}}
-            <h2 class="hiphen text-center nofade"></h2>
+            <h2 class="hiphen text-center nofade my-5"></h2>
             {{/scrim}}
             <span class="fa-stack fa-4x text-primary" data-play-video="#video_0">
               <i class="far fa-circle fa-stack-2x"></i>
@@ -21,5 +20,4 @@
           {{^standalone}}
       </div>
     </div>
-  </div>
   {{/standalone}}

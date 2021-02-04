@@ -30,6 +30,7 @@
   &--cover {
     background-image: url("../wintersphere-19-mkt-page-02v04-assets/scrapper_ski.png");
     background-size: cover;
+
     @media (max-width: 767px) {
       height: 50vh;
     }
@@ -41,8 +42,9 @@
   .modal {
     &-body {
       padding: 0;
-      overflow-x: hidden;
+      overflow: hidden;
     }
+    &-lg{max-width: 60vw !important;}
 
     &-header {
       align-items: baseline;
@@ -64,9 +66,13 @@
   }
 
   .article {
-    width: 50%;
-    @media (min-width: 768px) and (max-width: 991px) {
-      width: 25%;
+    >div{
+        &:hover{
+        border: 1px solid var(--light);
+        border-radius: 5px;
+       box-shadow: 5px 2px 15px 5px var(--light)
+
+      }
     }
   }
 }
