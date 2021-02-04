@@ -8,7 +8,7 @@
     color: #fff;
     text-shadow: 0 0 100px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.1);
     display: none;
-    font-family: "brandon-grotesque",Arial,Helvetica,sans-serif;
+    font-family: "brandon-grotesque", Arial, Helvetica, sans-serif;
     @media (min-width: 768px) {
       font-size: 8rem;
     }
@@ -38,32 +38,18 @@
     cursor: pointer;
     cursor: hand;
   }
-
+h2{
+    @media screen and (max-width:768px) {
+      display: none !important;
+    }
+}
   .fa-stack {
     transition: all 0.2s ease-in-out;
-    vertical-align: top;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-
+    .fa-play {
+      margin-left: 0.5rem;
+    }
     &:hover {
       transform: scale(1.1);
-    }
-  }
-
-  .fa-circle {
-    font-size: 3rem;
-    @media (min-width: 768px) {
-      font-size: 6rem;
-      margin-right: 0;
-    }
-  }
-
-  .fa-play {
-    font-size: 2rem;
-    @media (min-width: 768px) {
-      font-size: 5rem;
     }
   }
 }
@@ -75,7 +61,8 @@
   display: none;
   font-size: 3em;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     outline: 0;
   }
 }

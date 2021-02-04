@@ -1,36 +1,30 @@
-var backToTop = {
-  setup: function() {
-    this.doThis();
-  },
-  doThis: function() {
-    // browser window scroll (in pixels) after which the "back to top" link is shown
-    var offset = 300,
-      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-      offset_opacity = 1200,
-      //duration of the top scrolling animation (in ms)
-      scroll_top_duration = 700,
-      //grab the "back to top" link
-      $back_to_top = $(".cd-top");
-
-    //hide or show the "back to top" link
-    $(window).scroll(function() {
-      $(this).scrollTop() > offset
-        ? $back_to_top.addClass("cd-is-visible")
-        : $back_to_top.removeClass("cd-is-visible cd-fade-out");
-      if ($(this).scrollTop() > offset_opacity) {
-        $back_to_top.addClass("cd-fade-out");
-      }
-    });
-
-    //smooth scroll to top
-    $back_to_top.on("click", function(event) {
-      event.preventDefault();
-      $("body,html").animate(
-        {
-          scrollTop: 0
-        },
-        scroll_top_duration
-      );
+class BackToTopButton {
+  constructor(btn) {
+    this.state = {
+      btn: btn,
+      offset: 300,      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+      offset_opacity: 1200,      //duration of the top scrolling animation (in ms)
+      scroll_top_duration: 700,
+    }
+    this.init();
+  }
+  init = ({ btn } = this.state) => {
+    this.handleScroll();
+    this.handleClick();
+  }
+  handleScroll = ({ btn, offset, offset_opacity } = this.state) => {
+    window.addEventListener('scroll', e => {
+      let scrollTop = $(e.target).scrollTop();
+      scrollTop > offset
+        ? btn.classList.add("cd-is-visible")
+        : btn.classList.remove("cd-is-visible").remove("cd-fade-out");
+      if (scrollTop > offset_opacity) btn.classList.add("cd-fade-out");
     });
   }
-};
+  handleClick = ({ btn, scroll_top_duration } = this.state) => {
+    btn.addEventListener('click', event => {
+      event.preventDefault();
+      $("body,html").animate({ scrollTop: 0 }, scroll_top_duration);
+    });
+  }
+}

@@ -50,52 +50,19 @@ var currLang,
     }
   };
 var maropostForm = {
-  setup: function() {
-    maropostForm.setCurrLang(),
-      maropostForm.pickContent(),
-      maropostForm.modalActions();
-      maropostForm.checkPolicy();
-      maropostForm.modalSet();
+  setup: function () {
+    this.setCurrLang();
+    this.pickContent();
+    this.modalActions();
+    this.checkPolicy();
+    this.modalSet();
   },
-  checkPolicy : function() {
-    $('#custom_fields_privacy').on('click touch', function(event) {
-      $('#newsletter_form_submit').attr('disabled', function(_, attr){ return !attr});
-    });
-  },
-  modalPopUp: function() {
-    var visited = $.cookie("visited_wintersphere");
-    // visited = null;
-    if (!$('.modal').hasClass('in') && visited == null && window.location.href.indexOf("contact_fields") < 0) {
-      $("#newsletter_modal").modal("show");
-      clearTimeout(this.modalCountdown);
-    } else {
-      clearTimeout(this.modalCountdown);
-      maropostForm.modalSet();
-    }
-  },
-  modalSet: function() {
-    this.modalCountdown = setTimeout(this.modalPopUp, 30000);
-    // this.modalCountdown = setTimeout(this.modalPopUp, 300);
-  },
-  modalActions: function() {
-    $("#newsletter_modal").on("show.bs.modal", function() {
-      $("#newsletter-box")
-        .detach()
-        .appendTo("#newsletter_modal_content");
-        $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
-    });
-    $("#newsletter_modal").on("hidden.bs.modal", function() {
-      $("#newsletter-box")
-        .detach()
-        .appendTo("#newsletter-box--wrapper");
-    });
-  },
-  setCurrLang: function() {
-    let e = window.location.href.split(".com/")[1] || window.location.href.split("3000/")[1];
+  setCurrLang: () => {
+    let e = window.location.pathname;
     if (
       ((currLang = e.split("/")[1] || "en"),
-      (currCountry = e.split("/")[0] || "gb"),
-      null !== document.getElementById("custom_fields_country"))
+        (currCountry = e.split("/")[0] || "gb"),
+        null !== document.getElementById("custom_fields_country"))
     ) {
       var o = document.createElement("script");
       (o.src = "https://assets.scott-sports.com/ressources/country-list.json"),
@@ -108,7 +75,35 @@ var maropostForm = {
     }
     $('#custom_fields_country_isocode_alpha2').val(e.split("/")[0].toString());
   },
-  showMessage: function(e, o) {
+  pickContent: () => {
+    if (window.location.href.includes("fail")) maropostForm.showMessage("fail", ".maropost-form_message-fail");
+    else if (!(window.location.href.includes("dbl-opt"))) {
+      var dblOptIn = ["de", "at"].includes(currLang) && currCountry !== 'ch';
+      if (window.location.href.includes("contact_fields")) maropostForm.showMessage(dblOptIn ? "double" : "success");
+      $(".maropost-form").show();
+      maropostForm.showMessage("confirmed", ".maropost-form_message-dbl-opt");
+    }
+  },
+  modalActions: () => {
+    $("#newsletter_modal").on("show.bs.modal hidden.bs.modal", e => {
+      clearTimeout(this.modalCountdown);
+      $("#newsletter-box").detach().appendTo(e.type !== "show.bs.modal" ? "#newsletter_modal_content" : "#newsletter-box--wrapper");
+      if ($.cookie("visited_wintersphere") === null) $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
+    })
+  },
+  checkPolicy: () => {
+    $('#custom_fields_privacy').on('click touch', () =>
+      $('#newsletter_form_submit').attr('disabled', function (_, attr) { return !attr })
+    )
+  },
+  modalPopUp: () => {
+    var visited = $.cookie("visited_wintersphere");
+    if (visited == null && !window.location.href.includes("contact_fields")) $("#newsletter_modal").modal("show");
+    else clearTimeout(this.modalCountdown);
+  },
+  modalSet: () => this.modalCountdown = setTimeout(this.modalPopUp, 30000),
+
+  showMessage: (e, o) => {
     !o && $(".maropost-form").fadeOut(),
       (o = o || ".maropost-form_message"),
       $(o)
@@ -123,61 +118,49 @@ var maropostForm = {
       300
     );
   },
-  setCountriesList: function() {
+  setCountriesList: function () {
     let e = countries[currLang] || countries.en;
     $("<option/>", {
       value: "key"
     })
       .text("--")
       .appendTo("#custom_fields_country"),
-      Object.keys(e).map(function(o) {
+      Object.keys(e).map(function (o) {
         $("<option/>", {
           value: o
         })
           .text(e[o])
           .appendTo("#custom_fields_country"),
           o.toLowerCase() === currCountry &&
-            $('option[value="' + o + '"]').attr("selected", "true"),
+          $('option[value="' + o + '"]').attr("selected", "true"),
           "uk" === o.toLowerCase() &&
-            "gb" === currCountry &&
-            $('option[value="' + o + '"]').attr("selected", "true");
+          "gb" === currCountry &&
+          $('option[value="' + o + '"]').attr("selected", "true");
       }),
       (currCountry = $("#custom_fields_country")
         .val()
         .toLowerCase());
   },
-  setLanguagesList: function() {
-
+  setLanguagesList: () => {
     let e = languages[currLang] || languages.en;
-    Object.keys(e).map(function(o) {
+    Object.keys(e).map(function (o) {
       $("<option/>", {
         value: o
       })
         .text(e[o])
         .appendTo("#custom_fields_language_preferred"),
         o.toLowerCase() === currLang &&
-          $('option[value="' + o + '"]').attr("selected", "true");
+        $('option[value="' + o + '"]').attr("selected", "true");
     });
-  },
-  pickContent: function() {
-    if (window.location.href.indexOf("fail") >= 0)
-      maropostForm.showMessage("fail", ".maropost-form_message-fail");
-    else {
-      if (!(window.location.href.indexOf("dbl-opt") >= 0))
-        return window.location.href.indexOf("contact_fields") >= 0
-          ? (["de", "at"].indexOf(currLang) >= 0 && currCountry !== 'ch')
-            ? maropostForm.showMessage("double")
-            : maropostForm.showMessage("success")
-          : void $(".maropost-form").show();
-      maropostForm.showMessage("confirmed", ".maropost-form_message-dbl-opt");
-    }
   }
 };
 
-function clData(e) {
-  (countries = e), maropostForm.setCountriesList();
+const clData = e => {
+  const countries = e;
+  maropostForm.setCountriesList();
 }
 
-function llData(e) {
-  (languages = e), maropostForm.setLanguagesList();
+const llData = e => {
+  const languages = e;
+  maropostForm.setLanguagesList();
 }

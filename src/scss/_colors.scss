@@ -1,0 +1,9 @@
+$colors: (
+    blue:red
+);
+
+@each $name, $value in $colors {
+  .text-#{$name} {
+    color: $value;
+  }
+}

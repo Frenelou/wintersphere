@@ -3151,104 +3151,85 @@ function wintersphereText(e) {
 }
 var scrollMagicWintersphere = {
   prevWidth: 0,
-  setup: function() {
+  setup: function () {
     this.getText();
     this.resizeToggle();
   },
-  desktopOnlyScenes: function() {
-    this.parallax(), this.follow(), this.video();
-  },
-  scrim: {
-    en: {h2: "Conquer the Elements", placeholder: "Your email Adress"},
-    de: {h2: "Besiege die ELEMENTE", placeholder: "E-mail Adresse"},
-    fr: {h2: "À la conquête des éléments", placeholder: "Adresse email"},
-    it: {h2: "CONQUISTA GLI ELEMENTI", placeholder: "Indirizzi e-mail"},
-    cs: {h2: "S živly nejsou žerty"}
-  },
-  getText: function() {
-    $("#hero_cta h2").text(this.scrim[currLang].h2 || "Conquer the Elements");
-    waitForWebfonts(["brandon-grotesque"], function() {
-      $("#hero_cta h2").fadeIn("slow");
-    });
-
-    if (this.scrim[currLang].placeholder)
-      $("#contact_fields_email").attr(
-        "placeholder",
-        this.scrim[currLang].placeholder
-      );
-    let o = document.createElement("script");
-    (o.src = `wintersphere-19-mkt-page-02v04-assets/wintersphere_data_${currLang}.json`),
-      document.body.appendChild(o);
-  },
-  localize: function() {
-    $("p, h2, h3, h4, h5,label, input, a").each(function(index, el) {
-      if ($(el).data("text")) {
-        $(el).html(text[$(el).data("text")]);
-      }
-    });
-    $("article").each(function(index, el) {
-      let id = $(el)
-        .attr("id")
-        .replace("product_", "");
-      let {props, name} = products.find(function(item) {
-        return item.id === id;
-      });
-      $(el)
-        .find("h5")
-        .text(name);
-
-      for (var i = 0; i <= 2; i++) {
-        $(el)
-          .find("li")
-          .eq(i)
-          .html("<span>-</span> " + props[i]);
-      }
-    });
-  },
-  universalScenes: function() {
-    controller = new ScrollMagic.Controller();
-    this.fadeTextIn(), this.slideIn();
+  desktopOnlyScenes: function () {
     if ($(window).width() >= 992) {
-      scrollMagicWintersphere.desktopOnlyScenes();
+      this.parallax();
+      this.follow();
+      this.video();
     }
   },
-  video: function() {
-    $("video").each(function(index, el) {
+  scrim: {
+    en: { h2: "Conquer the Elements", placeholder: "Your email Adress" },
+    de: { h2: "Besiege die ELEMENTE", placeholder: "E-mail Adresse" },
+    fr: { h2: "À la conquête des éléments", placeholder: "Adresse email" },
+    it: { h2: "CONQUISTA GLI ELEMENTI", placeholder: "Indirizzi e-mail" },
+    cs: { h2: "S živly nejsou žerty", placeholder: "" }
+  },
+  getText: function () {
+    $("#hero_cta h2").text(this.scrim[currLang].h2 || "Conquer the Elements");
+    $("#hero_cta h2").fadeIn("slow");
+
+    document.querySelector("#contact_fields_email").placeholder = this.scrim[currLang].placeholder;
+    let o = document.createElement("script");
+
+    o.src = `wintersphere-19-mkt-page-02v04-assets/wintersphere_data_${currLang}.json`;
+    document.body.appendChild(o);
+  },
+  localize: () => {
+    document.querySelectorAll("[data-text]").forEach(el => el.innerHTML = text[$(el).data("text")]);
+    document.querySelectorAll("article").forEach(el => {
+      let { props, name } = products.find(item => item.id === el.id.replace("product_", ""));
+      el.querySelector("h5").innerText = name;
+      el.querySelectorAll("li").forEach((li, i) => li.innerHTML = "<span>-</span> " + props[i])
+    });
+  },
+  universalScenes: function () {
+    controller = new ScrollMagic.Controller();
+    this.fadeTextIn();
+    this.slideIn();
+    scrollMagicWintersphere.desktopOnlyScenes();
+  },
+  video: function () {
+    $("video").each(function (index, el) {
       let id = $(el).attr("id"),
         video = new ScrollMagic.Scene({
           triggerElement: "#" + id
         })
-          .on("enter", function() {
+          .on("enter", function () {
             if ($(`#${id}`).hasClass("paused") && id !== "video_0") {
               document.getElementById(id).play();
               $(`#${id}`).removeClass("paused");
             }
           })
-          .on("leave", function() {
+          .on("leave", function () {
             document.getElementById(id).pause();
             $(`#${id}`).addClass("paused");
           })
           .addTo(controller);
     });
   },
-  fadeTextIn: function() {
+  fadeTextIn: function () {
     $("p, h2, h3, h4")
       .not(".nofade")
-      .each(function(index, el) {
+      .each(function (index, el) {
         let id = `textFade_${index}`;
         $(el).attr("id", id);
         fadeText = new ScrollMagic.Scene({
           triggerElement: "#" + id,
           offset: -200
         })
-          .on("start", function() {
+          .on("start", function () {
             $(`#${id}`).addClass("fadeText");
           })
           .addTo(controller);
       });
   },
-  resizeToggle: function() {
-    $(window).on("load resize", function(event) {
+  resizeToggle: function () {
+    $(window).on("load resize", function (event) {
       if (controller === null) {
         scrollMagicWintersphere.universalScenes();
       } else if (
@@ -3259,302 +3240,79 @@ var scrollMagicWintersphere = {
         controller = null;
         console.log("destroyed");
         scrollMagicWintersphere.universalScenes();
-      } else if (
-        $(window).width() >= 992 &&
-        this.prevWidth <= $(window).width()
-      ) {
+      } else if (this.prevWidth <= $(window).width()) {
         scrollMagicWintersphere.desktopOnlyScenes();
       }
     });
   },
-  parallax: function() {
-    $(".parallax").each(function(index, el) {
-      let thisID = "#" + $(el).attr("id"),
-        parent = $(el).data("parent"),
-        pWidth = $(parent).width(),
-        elY = $(el).data("y");
-
-      $(el)
-        .closest(".parallax_parent")
-        .css(
-          "max-width",
-          $(el)
-            .closest(".parallax_parent")
-            .width()
-        );
-      let scroller = new ScrollMagic.Scene({
-        triggerElement: parent
+  parallax: () =>
+    document.querySelectorAll(".parallax").forEach(el =>
+      new ScrollMagic.Scene({ triggerElement: el.dataset.parent })
+        .setTween(el.id, { y: el.dataset.y, ease: Linear.easeNone })
+        .addTo(controller)
+    )
+  ,
+  follow: () =>
+    document.querySelectorAll(".follow-me").forEach(el =>
+      new ScrollMagic.Scene({
+        triggerElement: el.dataset.parent,
+        duration: el.dataset.duration || 100,
+        offset: el.dataset.offset || 0
       })
-        .setTween(thisID, {y: elY, ease: Linear.easeNone})
+        .setPin(el.id, { y: offset, ease: Linear.easeOutBounce })
+        .addTo(controller)
+    )
+  ,
+  slideIn: () =>
+    document.querySelectorAll(".collections-imgs, .slidable").forEach(el => {
+      new ScrollMagic.Scene({
+        triggerElement: el
+      })
+        .on("enter", () => {
+          el.classList.add("slideIn");
+          el.parentNode.parentNode.childNodes.forEach(n => n.classList.add('fadeIn'))
+        })
         .addTo(controller);
-    });
-  },
-  follow: function() {
-    $(".follow-me").each(function(index, el) {
-      let thisID = "#" + $(el).attr("id"),
-        parent = "#" + $(el).data("parent"),
-        elOffset = $(el).data("offset") || 0,
-        elDuration = $(el).data("duration") || 100,
-        scroller = new ScrollMagic.Scene({
-          triggerElement: parent,
-          duration: elDuration,
-          offset: elOffset
-        })
-          .setPin(thisID, {y: "100px", ease: Linear.easeOutBounce})
-          .addTo(controller);
-    });
-  },
-  slideIn: function() {
-    $(".collections-imgs, .slidable").each(function(index, el) {
-      let slidableID = "#" + $(el).attr("id"),
-        colImg = new ScrollMagic.Scene({
-          triggerElement: slidableID
-        })
-          .on("enter", function() {
-            $(slidableID).addClass("slideIn");
-            $(slidableID)
-              .parent()
-              .siblings(".collections-titles")
-              .addClass("fadeIn");
-          })
-          .addTo(controller);
-    });
-  }
+    })
+
 };
-function waitForWebfonts(fonts, callback) {
-  var loadedFonts = 0;
-  for (var i = 0, l = fonts.length; i < l; ++i) {
-    (function(font) {
-      var node = document.createElement("span");
-      // Characters that vary significantly among different fonts
-      node.innerHTML = "giItT1WQy@!-/#";
-      // Visible - so we can measure it - but not on the screen
-      node.style.position = "absolute";
-      node.style.left = "-10000px";
-      node.style.top = "-10000px";
-      // Large font size makes even subtle changes obvious
-      node.style.fontSize = "300px";
-      // Reset any font properties
-      node.style.fontFamily = "sans-serif";
-      node.style.fontVariant = "normal";
-      node.style.fontStyle = "normal";
-      node.style.fontWeight = "normal";
-      node.style.letterSpacing = "0";
-      document.body.appendChild(node);
-
-      // Remember width with no applied web font
-      var width = node.offsetWidth;
-
-      node.style.fontFamily = font + ", sans-serif";
-
-      var interval;
-      function checkFont() {
-        // Compare current width with original width
-        if (node && node.offsetWidth != width) {
-          ++loadedFonts;
-          node.parentNode.removeChild(node);
-          node = null;
-        }
-
-        // If all fonts have been loaded
-        if (loadedFonts >= fonts.length) {
-          if (interval) {
-            clearInterval(interval);
-          }
-          if (loadedFonts == fonts.length) {
-            callback();
-            return true;
-          }
-        }
-      }
-
-      if (!checkFont()) {
-        interval = setInterval(checkFont, 50);
-      }
-    })(fonts[i]);
-  }
-}
 
 var showMore = {
-  setup: function() {
+  setup: () => {
     showMore.getProducts();
     showMore.modalClose();
-    $(".related_products").each(function(index, el) {
-      $(this)
-        .find("#articles_modal")
-        .attr("id", `articles_modal_${index}`);
-    });
   },
   currentProduct: "scrapper_ski",
   bg_url: "",
-  modalClose: function() {
-    $("#show-more-modal").on("hidden.bs.modal", function(e) {
-      $("#products, #quickview--box--details, #quickview--box--footer").empty();
-      $("#quickview--box--wrapper").hide();
-    });
-  },
-  quickViewBack: function() {
-    $(".quickview-back").click(function(event) {
-      event.preventDefault();
-      if ($("#quickview--box--wrapper").hasClass("findSizeOn")) {
-        $("#quickview--box--wrapper").toggleClass("findSizeOn");
-      } else {
-        $("#quickview--box--wrapper").hide();
-      }
-      $("#quickview--box--footer").hide();
-      return false;
-    });
-  },
-  bindFindYourSize: function() {
-    $(".find-your-size").click(function(event) {
-      $(".product_detail #articles_modal").hide();
-      $("#quickview-sizechart").fadeIn();
-      $("#quickview--box--wrapper").addClass("findSizeOn");
-    });
-  },
-  bindMktQuickViewEvents: function() {
-    this.bindColorAndSizesButtons();
-    this.mktQuickViewThumbs();
-    ACC.product.bindAddToCartButtonAnalytics();
-    ACC.product.bindColorSizeAnalytics();
-    ACC.product.enableAddToCartButton();
-    ACC.product.initQuickviewLightbox();
-    // ACC.notifystock.bindShopPopup();
-    ACC.quickview.bindAddToCartCallback();
-  },
-  bindAddToCartCallback: function() {
-    $("#addToCartButton").on("click touch", function(event) {
-      event.preventDefault();
-      //   $("#quickview--box--wrapper").removeClass("findSizeOn");
-      //   $("#quickview-sizechart").hide();
-      //   $(".product_detail #articles_modal").hide();
-      // $("#show-more-modal").modal('hide')
-    });
-  },
-  mktQuickViewThumbs: function() {
-    $(".MagicZoom__thumbs")
-      .addClass("MagicScroll")
-      .removeClass("not-ready");
-    MagicScroll.start();
-    MagicZoom.start();
-  },
-  modalQuickview: function() {
-    $(".article__inside a.quickview").click(function(event) {
-      event.preventDefault();
-      var value = $(this)
-        .next(".quick-look")
-        .text();
 
-      $.ajax({
-        cache: false,
-        type: "GET",
-        url: ACC.config.encodedContextPath + "/category/" + value,
-        contentType: "text/html; charset=utf-8",
-        success: function(result) {
-          showMore.ajaxSuccess(result);
-        },
-        error: function(xhr, textStatus, errorThrown) {
-          console.log(errorThrown);
-        }
-      });
-      return false;
-    });
-  },
-  ajaxSuccess: function(data) {
-    var $html = $(data);
-    $("#quickview--box--details").html(
-      $(data)
-        .find(".product_detail")
-        .html()
-    );
-    $(".find-your-size")
-      .attr("data-toggle", "")
-      .attr("data-target", "")
-      .unbind();
-    showMore.bindFindYourSize();
-    $(data)
-      .find("[id^=add_to_cart]")
-      .appendTo("body");
-    $("#quickview-sizechart").html(
-      $(data)
-        .find("#quickview-sizechart")
-        .html()
-    );
-    $("#quickview--box--footer").html($html.find("#quickview-footer").html());
-    $("#quickview--box--wrapper").addClass("findSizeOn");
-    showMore.bindMktQuickViewEvents();
-    $("#quickview--box--wrapper, #quickview--box--footer").show();
-  },
-  bindColorAndSizesButtons: function() {
-    var ajaxParams = {
-      cache: false,
-      type: "GET",
-      url: "",
-      contentType: "text/html; charset=utf-8",
-      success: function(result) {
-        showMore.ajaxSuccess(result);
-      },
-      error: function(xhr, textStatus, errorThrown) {
-        $("#quickviewErrorModalContent").appendTo("#articles_modal");
-      }
-    };
-    $("#quickview--box--main div.modal--colors a").click(function(event) {
-      event.preventDefault();
-      var variantCode = $(this)
-        .find("img")
-        .attr("data-variantcode");
-      ajaxParams.url =
-        ACC.config.encodedContextPath +
-        "/category/" +
-        variantCode +
-        "/quickView";
-      $.ajax(ajaxParams);
-      return false;
-    });
-    $(
-      "#quickview--box--main div.product_detail__description__size--sizes a"
-    ).click(function(event) {
-      var variantCode = $(this).attr("data-variantcode");
-      ajaxParams.url =
-        ACC.config.encodedContextPath +
-        "/category/" +
-        variantCode +
-        "/quickView";
-      $.ajax(ajaxParams);
-      return false;
-    });
-  },
-  articleActions: function() {
-    $(".article").hover(
-      function() {
-        $(this).addClass("open active");
-      },
-      function() {
-        $(this).removeClass("open active");
-      }
+  modalClose: () => {
+    $("#show-more-modal").on("hidden.bs.modal", () =>
+      $("#products").empty()
     );
   },
-  changeModalImage: function() {
+
+  articleActions: el => {
+    el.addEventListener('mouseenter', () => el.classList.add("open").add("active"))
+    el.addEventListener('mouseleave', () => el.classList.remove("open").remove("active"))
+  },
+  changeModalImage: () => {
     $("#show-more-modal--cover").css(
       "background-image",
       `url(${showMore.bg_url})`
     );
   },
-  fillModal: function() {
-    $(`#related_products_box_${showMore.currentProduct} .article`).each(
-      function(index, el) {
-        $(el)
-          .clone()
-          .appendTo("#products");
+  fillModal: () => {
+    document.querySelectorAll(`#related_products_box_${showMore.currentProduct} .article`).forEach(
+      el => {
+        let article = el.cloneNode(true);
+        document.querySelector("#products").appendChild(article);
+        showMore.articleActions(article);
       }
     );
     $("#show-more-modal").modal("show");
-    showMore.articleActions();
-    showMore.modalQuickview();
-    showMore.quickViewBack();
   },
-  getProducts: function() {
-    $("a.show-more").on("click touch", function(event) {
+  getProducts: () => {
+    $("a.show-more").on("click touch", function (event) {
       event.preventDefault();
       showMore.currentProduct = $(this)
         .attr("id")
@@ -3627,52 +3385,19 @@ var currLang,
     }
   };
 var maropostForm = {
-  setup: function() {
-    maropostForm.setCurrLang(),
-      maropostForm.pickContent(),
-      maropostForm.modalActions();
-      maropostForm.checkPolicy();
-      maropostForm.modalSet();
+  setup: function () {
+    this.setCurrLang();
+    this.pickContent();
+    this.modalActions();
+    this.checkPolicy();
+    this.modalSet();
   },
-  checkPolicy : function() {
-    $('#custom_fields_privacy').on('click touch', function(event) {
-      $('#newsletter_form_submit').attr('disabled', function(_, attr){ return !attr});
-    });
-  },
-  modalPopUp: function() {
-    var visited = $.cookie("visited_wintersphere");
-    // visited = null;
-    if (!$('.modal').hasClass('in') && visited == null && window.location.href.indexOf("contact_fields") < 0) {
-      $("#newsletter_modal").modal("show");
-      clearTimeout(this.modalCountdown);
-    } else {
-      clearTimeout(this.modalCountdown);
-      maropostForm.modalSet();
-    }
-  },
-  modalSet: function() {
-    this.modalCountdown = setTimeout(this.modalPopUp, 30000);
-    // this.modalCountdown = setTimeout(this.modalPopUp, 300);
-  },
-  modalActions: function() {
-    $("#newsletter_modal").on("show.bs.modal", function() {
-      $("#newsletter-box")
-        .detach()
-        .appendTo("#newsletter_modal_content");
-        $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
-    });
-    $("#newsletter_modal").on("hidden.bs.modal", function() {
-      $("#newsletter-box")
-        .detach()
-        .appendTo("#newsletter-box--wrapper");
-    });
-  },
-  setCurrLang: function() {
-    let e = window.location.href.split(".com/")[1] || window.location.href.split("3000/")[1];
+  setCurrLang: () => {
+    let e = window.location.pathname;
     if (
       ((currLang = e.split("/")[1] || "en"),
-      (currCountry = e.split("/")[0] || "gb"),
-      null !== document.getElementById("custom_fields_country"))
+        (currCountry = e.split("/")[0] || "gb"),
+        null !== document.getElementById("custom_fields_country"))
     ) {
       var o = document.createElement("script");
       (o.src = "https://assets.scott-sports.com/ressources/country-list.json"),
@@ -3685,7 +3410,35 @@ var maropostForm = {
     }
     $('#custom_fields_country_isocode_alpha2').val(e.split("/")[0].toString());
   },
-  showMessage: function(e, o) {
+  pickContent: () => {
+    if (window.location.href.includes("fail")) maropostForm.showMessage("fail", ".maropost-form_message-fail");
+    else if (!(window.location.href.includes("dbl-opt"))) {
+      var dblOptIn = ["de", "at"].includes(currLang) && currCountry !== 'ch';
+      if (window.location.href.includes("contact_fields")) maropostForm.showMessage(dblOptIn ? "double" : "success");
+      $(".maropost-form").show();
+      maropostForm.showMessage("confirmed", ".maropost-form_message-dbl-opt");
+    }
+  },
+  modalActions: () => {
+    $("#newsletter_modal").on("show.bs.modal hidden.bs.modal", e => {
+      clearTimeout(this.modalCountdown);
+      $("#newsletter-box").detach().appendTo(e.type !== "show.bs.modal" ? "#newsletter_modal_content" : "#newsletter-box--wrapper");
+      if ($.cookie("visited_wintersphere") === null) $.cookie('visited_wintersphere', 'yes', { expires: 1, path: '/' });
+    })
+  },
+  checkPolicy: () => {
+    $('#custom_fields_privacy').on('click touch', () =>
+      $('#newsletter_form_submit').attr('disabled', function (_, attr) { return !attr })
+    )
+  },
+  modalPopUp: () => {
+    var visited = $.cookie("visited_wintersphere");
+    if (visited == null && !window.location.href.includes("contact_fields")) $("#newsletter_modal").modal("show");
+    else clearTimeout(this.modalCountdown);
+  },
+  modalSet: () => this.modalCountdown = setTimeout(this.modalPopUp, 30000),
+
+  showMessage: (e, o) => {
     !o && $(".maropost-form").fadeOut(),
       (o = o || ".maropost-form_message"),
       $(o)
@@ -3700,63 +3453,51 @@ var maropostForm = {
       300
     );
   },
-  setCountriesList: function() {
+  setCountriesList: function () {
     let e = countries[currLang] || countries.en;
     $("<option/>", {
       value: "key"
     })
       .text("--")
       .appendTo("#custom_fields_country"),
-      Object.keys(e).map(function(o) {
+      Object.keys(e).map(function (o) {
         $("<option/>", {
           value: o
         })
           .text(e[o])
           .appendTo("#custom_fields_country"),
           o.toLowerCase() === currCountry &&
-            $('option[value="' + o + '"]').attr("selected", "true"),
+          $('option[value="' + o + '"]').attr("selected", "true"),
           "uk" === o.toLowerCase() &&
-            "gb" === currCountry &&
-            $('option[value="' + o + '"]').attr("selected", "true");
+          "gb" === currCountry &&
+          $('option[value="' + o + '"]').attr("selected", "true");
       }),
       (currCountry = $("#custom_fields_country")
         .val()
         .toLowerCase());
   },
-  setLanguagesList: function() {
-
+  setLanguagesList: () => {
     let e = languages[currLang] || languages.en;
-    Object.keys(e).map(function(o) {
+    Object.keys(e).map(function (o) {
       $("<option/>", {
         value: o
       })
         .text(e[o])
         .appendTo("#custom_fields_language_preferred"),
         o.toLowerCase() === currLang &&
-          $('option[value="' + o + '"]').attr("selected", "true");
+        $('option[value="' + o + '"]').attr("selected", "true");
     });
-  },
-  pickContent: function() {
-    if (window.location.href.indexOf("fail") >= 0)
-      maropostForm.showMessage("fail", ".maropost-form_message-fail");
-    else {
-      if (!(window.location.href.indexOf("dbl-opt") >= 0))
-        return window.location.href.indexOf("contact_fields") >= 0
-          ? (["de", "at"].indexOf(currLang) >= 0 && currCountry !== 'ch')
-            ? maropostForm.showMessage("double")
-            : maropostForm.showMessage("success")
-          : void $(".maropost-form").show();
-      maropostForm.showMessage("confirmed", ".maropost-form_message-dbl-opt");
-    }
   }
 };
 
-function clData(e) {
-  (countries = e), maropostForm.setCountriesList();
+const clData = e => {
+  const countries = e;
+  maropostForm.setCountriesList();
 }
 
-function llData(e) {
-  (languages = e), maropostForm.setLanguagesList();
+const llData = e => {
+  const languages = e;
+  maropostForm.setLanguagesList();
 }
 
 var videoActions = {
@@ -3785,44 +3526,38 @@ var videoActions = {
   }
 };
 
-var backToTop = {
-  setup: function() {
-    this.doThis();
-  },
-  doThis: function() {
-    // browser window scroll (in pixels) after which the "back to top" link is shown
-    var offset = 300,
-      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-      offset_opacity = 1200,
-      //duration of the top scrolling animation (in ms)
-      scroll_top_duration = 700,
-      //grab the "back to top" link
-      $back_to_top = $(".cd-top");
-
-    //hide or show the "back to top" link
-    $(window).scroll(function() {
-      $(this).scrollTop() > offset
-        ? $back_to_top.addClass("cd-is-visible")
-        : $back_to_top.removeClass("cd-is-visible cd-fade-out");
-      if ($(this).scrollTop() > offset_opacity) {
-        $back_to_top.addClass("cd-fade-out");
-      }
-    });
-
-    //smooth scroll to top
-    $back_to_top.on("click", function(event) {
-      event.preventDefault();
-      $("body,html").animate(
-        {
-          scrollTop: 0
-        },
-        scroll_top_duration
-      );
+class BackToTopButton {
+  constructor(btn) {
+    this.state = {
+      btn: btn,
+      offset: 300,      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+      offset_opacity: 1200,      //duration of the top scrolling animation (in ms)
+      scroll_top_duration: 700,
+    }
+    this.init();
+  }
+  init = ({ btn } = this.state) => {
+    this.handleScroll();
+    this.handleClick();
+  }
+  handleScroll = ({ btn, offset, offset_opacity } = this.state) => {
+    window.addEventListener('scroll', e => {
+      let scrollTop = $(e.target).scrollTop();
+      scrollTop > offset
+        ? btn.classList.add("cd-is-visible")
+        : btn.classList.remove("cd-is-visible").remove("cd-fade-out");
+      if (scrollTop > offset_opacity) btn.classList.add("cd-fade-out");
     });
   }
-};
-
+  handleClick = ({ btn, scroll_top_duration } = this.state) => {
+    btn.addEventListener('click', event => {
+      event.preventDefault();
+      $("body,html").animate({ scrollTop: 0 }, scroll_top_duration);
+    });
+  }
+}
 $(document).ready(function() {
+  new BackToTopButton(document.querySelector(".cd-top"));
   maropostForm.setup();
   scrollMagicWintersphere.setup();
   videoActions.setup();
