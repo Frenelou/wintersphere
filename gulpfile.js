@@ -77,16 +77,16 @@ gulp.task("new", function(done) {
 gulp.task("js", function() {
   return gulp
     .src([
-      "src/js/plugins/TweenMax.min.js",
-      "src/js/ScrollMagic.js",
-      "src/js/plugins/animation.gsap.js",
-      // "src/js/plugins/animation.velocity.js",
-      // "src/js/plugins/jquery.ScrollMagic.js",
-      "src/js/scrollMagicAnimation.js",
       "src/js/showMore.js",
       "src/js/newsletter.js",
       "src/js/video.js",
       "src/js/backToTop.js",
+      // "src/js/plugins/TweenMax.min.js",
+      // "src/js/plugins/animation.velocity.js",
+      // "src/js/plugins/animation.gsap.js",
+      // "src/js/plugins/ScrollMagic.js",
+      // "src/js/plugins/jquery.ScrollMagic.js",
+      "src/js/scrollMagicAnimation.js",
       "src/js/setup.js"
     ])
     .pipe(concat("scripts.js"))

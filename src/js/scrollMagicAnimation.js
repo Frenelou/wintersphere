@@ -49,43 +49,28 @@ var scrollMagicWintersphere = {
     this.slideIn();
     scrollMagicWintersphere.desktopOnlyScenes();
   },
-  video: function () {
-    $("video").each(function (index, el) {
-      let id = $(el).attr("id"),
-        video = new ScrollMagic.Scene({
-          triggerElement: "#" + id
+  video: () => {
+    document.querySelectorAll("video").forEach((el, i) => {
+      new ScrollMagic.Scene({
+        triggerElement: el
+      })
+        .on("enter leave", e => {
+          e.type === "enter" && i !== 0 ? el.play() : el.pause();
+          el.classList.toggle("paused");
         })
-          .on("enter", function () {
-            if ($(`#${id}`).hasClass("paused") && id !== "video_0") {
-              document.getElementById(id).play();
-              $(`#${id}`).removeClass("paused");
-            }
-          })
-          .on("leave", function () {
-            document.getElementById(id).pause();
-            $(`#${id}`).addClass("paused");
-          })
-          .addTo(controller);
+        .addTo(controller);
     });
   },
-  fadeTextIn: function () {
-    $("p, h2, h3, h4")
-      .not(".nofade")
-      .each(function (index, el) {
-        let id = `textFade_${index}`;
-        $(el).attr("id", id);
-        fadeText = new ScrollMagic.Scene({
-          triggerElement: "#" + id,
-          offset: -200
-        })
-          .on("start", function () {
-            $(`#${id}`).addClass("fadeText");
-          })
-          .addTo(controller);
-      });
-  },
-  resizeToggle: function () {
-    $(window).on("load resize", function (event) {
+  fadeTextIn: () =>
+    document.querySelectorAll("[data-text], span.fade").forEach(el =>
+      fadeText = new ScrollMagic.Scene({
+        triggerElement: el,
+        offset: -200
+      }).on("start", () => el.classList.add("in"))
+        .addTo(controller)
+    ),
+  resizeToggle: () => {
+    $(window).on("load resize", () => {
       if (controller === null) {
         scrollMagicWintersphere.universalScenes();
       } else if (
@@ -94,7 +79,6 @@ var scrollMagicWintersphere = {
       ) {
         controller.destroy();
         controller = null;
-        console.log("destroyed");
         scrollMagicWintersphere.universalScenes();
       } else if (this.prevWidth <= $(window).width()) {
         scrollMagicWintersphere.desktopOnlyScenes();
@@ -103,19 +87,19 @@ var scrollMagicWintersphere = {
   },
   parallax: () =>
     document.querySelectorAll(".parallax").forEach(el =>
-      new ScrollMagic.Scene({ triggerElement: el.dataset.parent })
-        .setTween(el.id, { y: el.dataset.y, ease: Linear.easeNone })
+      new ScrollMagic.Scene({ triggerElement: document.querySelector(el.dataset.parent) })
+        .setTween(el, { y: el.dataset.y, ease: Linear.easeNone })
         .addTo(controller)
     )
   ,
   follow: () =>
     document.querySelectorAll(".follow-me").forEach(el =>
       new ScrollMagic.Scene({
-        triggerElement: el.dataset.parent,
+        triggerElement: document.querySelector(el.dataset.parent),
         duration: el.dataset.duration || 100,
         offset: el.dataset.offset || 0
       })
-        .setPin(el.id, { y: offset, ease: Linear.easeOutBounce })
+        .setPin(el, { y: el.dataset.offset, ease: Linear.easeOutBounce })
         .addTo(controller)
     )
   ,
@@ -124,10 +108,7 @@ var scrollMagicWintersphere = {
       new ScrollMagic.Scene({
         triggerElement: el
       })
-        .on("enter", () => {
-          el.classList.add("slideIn");
-          el.parentNode.parentNode.childNodes.forEach(n => n.classList.add('fadeIn'))
-        })
+        .on("enter", () => el.classList.add("slideIn"))
         .addTo(controller);
     })
 

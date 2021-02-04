@@ -3,7 +3,7 @@
     <div class="row-fluid ">
       <div class="col-sm-12 no-padding">
         {{/standalone}}
-        <video id="{{id}}" class="video {{^autoplay}}noPlay{{/autoplay}}" poster="{{{poster}}}" {{#autoplay}} autoplay playsinline loop="loop" {{/autoplay}} {{^unmute}} muted="muted" {{/unmute}} >
+        <video id="{{id}}" class="video {{^autoplay}}noPlay{{/autoplay}}" poster="{{{poster}}}" preload="auto" {{#autoplay}} autoplay playsinline loop="loop" {{/autoplay}} {{^unmute}} muted="muted" {{/unmute}} >
           <source src="{{{url}}}.mp4" type="video/mp4">
           <source src="{{{url}}}.ogg" type="video/ogg">
           <source src="{{{url}}}.webm" type="video/webm"></video>
@@ -12,14 +12,11 @@
             {{#scrim}}
             <h2 class="hiphen text-center nofade"></h2>
             {{/scrim}}
-            <span class="fa-stack fa-4x text-primary">
+            <span class="fa-stack fa-4x text-primary" data-play-video="#video_0">
               <i class="far fa-circle fa-stack-2x"></i>
               <i class="fas fa-play fa-stack-1x"></i>
             </span>
           </div>
-          <button type="button" name="button" class="btn btn-link videoStop">
-            <i class="fal fa-times text-primary"></i>
-          </button>
           {{/autoplay}}
           {{^standalone}}
       </div>

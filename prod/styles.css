@@ -1,24 +1,58 @@
+body {
+  font-size: 14px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.header__top-nav .btn-group > .dropdown > button,
+.nav-tabs {
+  font-weight: 600;
+  font-family: "brandon-grotesque", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem; }
+
+h3,
+h4,
+.h3,
+.h4 {
+  letter-spacing: 0.14rem; }
+
+h5,
+h6,
+.h5,
+.h6 {
+  letter-spacing: 0.1rem; }
+
+.btn {
+  font-family: "brandon-grotesque", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 900; }
+
+body {
+  width: 100vw;
+  overflow-x: hidden; }
+
 #breadcrumbs--container {
   display: none; }
 
-h2:not(.nofade),
-h3:not(.nofade),
-h4:not(.nofade),
-p:not(.nofade) {
-  -webkit-transition: opacity 0.25s;
-  -moz-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-  opacity: 0; }
-  h2:not(.nofade).fadeText,
-  h3:not(.nofade).fadeText,
-  h4:not(.nofade).fadeText,
-  p:not(.nofade).fadeText {
-    opacity: 1; }
+hr {
+  visibility: hidden; }
 
 #quickview--box--wrapper h2,
 #quickview--box--wrapper h3,
 #quickview--box--wrapper h4,
-#quickview--box--wrapper p, #quickview-main h2,
+#quickview--box--wrapper p,
+#quickview-main h2,
 #quickview-main h3,
 #quickview-main h4,
 #quickview-main p {
@@ -112,12 +146,8 @@ video {
   text-shadow: 0 0 100px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.1);
   display: none;
   font-family: "brandon-grotesque", Arial, Helvetica, sans-serif; }
-  @media (min-width: 768px) {
-    #part_1_hero h2 {
-      font-size: 8rem; } }
 
 #part_1_hero--content {
-  display: -ms-flex;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

@@ -1,22 +1,17 @@
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
 #breadcrumbs--container {
   display: none;
 }
-
-h2,
-h3,
-h4,
-p {
-  &:not(.nofade) {
-    transition: opacity 0.25s;
-    opacity: 0;
-
-    &.fadeText {
-      opacity: 1;
-    }
-  }
+hr {
+  visibility: hidden;
 }
 
-#quickview--box--wrapper, #quickview-main {
+
+#quickview--box--wrapper,
+#quickview-main {
   h2,
   h3,
   h4,
@@ -38,7 +33,6 @@ p {
   width: 50vw;
   max-width: 50vw;
 }
-
 
 .w-100 {
   width: 100%;

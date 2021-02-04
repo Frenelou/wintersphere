@@ -1,55 +1,37 @@
-var showMore = {
-  setup: () => {
-    showMore.getProducts();
-    showMore.modalClose();
-  },
-  currentProduct: "scrapper_ski",
-  bg_url: "",
+class ShowMore {
+  constructor(btn) {
+    this.state = {
+      btn: btn,
+      productsContainer: document.querySelector("#products"),
+      modal: document.querySelector("#show-more-modal"),
+    }
+    this.init();
+  }
+  init = ({ btn, modal, productsContainer } = this.state) => {
+    btn.addEventListener('click', e => this.handleClick(e));
+    btn.addEventListener('touch', e => this.handleClick(e));
+    $(modal).on("hidden.bs.modal", () => productsContainer.innerHtMl = "");
+  }
+  handleClick = (event, { btn } = this.state) => {
+    event.preventDefault();
+    this.setModal(btn);
+    this.setProducts(btn.id.substr(6));
+    $("#show-more-modal").modal("show");
+  }
+  setModal = btn => {
+    let image = btn.querySelector("img"),
+      img = image ? image.src : btn.querySelector("div").style.backgroundImage.match(/"((?:\\.|[^"\\])*)"/);
 
-  modalClose: () => {
-    $("#show-more-modal").on("hidden.bs.modal", () =>
-      $("#products").empty()
-    );
-  },
-
-  articleActions: el => {
-    el.addEventListener('mouseenter', () => el.classList.add("open").add("active"))
-    el.addEventListener('mouseleave', () => el.classList.remove("open").remove("active"))
-  },
-  changeModalImage: () => {
-    $("#show-more-modal--cover").css(
-      "background-image",
-      `url(${showMore.bg_url})`
-    );
-  },
-  fillModal: () => {
-    document.querySelectorAll(`#related_products_box_${showMore.currentProduct} .article`).forEach(
+    this.state.modal.querySelector("#show-more-modal--cover").style.backgroundImage = `url(${img})`
+  }
+  setProducts = (currentProduct) =>
+    document.querySelectorAll(`#related_products_box_${currentProduct} .article`).forEach(
       el => {
         let article = el.cloneNode(true);
-        document.querySelector("#products").appendChild(article);
-        showMore.articleActions(article);
+        this.state.productsContainer.appendChild(article);
+        article.addEventListener('mouseenter', () => article.classList.add("open", "active"));
+        article.addEventListener('mouseleave', () => article.classList.remove("open", "active"));
       }
     );
-    $("#show-more-modal").modal("show");
-  },
-  getProducts: () => {
-    $("a.show-more").on("click touch", function (event) {
-      event.preventDefault();
-      showMore.currentProduct = $(this)
-        .attr("id")
-        .substr(6);
-      showMore.bg_url =
-        $(this)
-          .find("img")
-          .attr("src") ||
-        $(this)
-          .find("div")
-          .css("background-image")
-          .replace("url(", "")
-          .replace(")", "")
-          .replace(/\"/gi, "");
-      showMore.changeModalImage();
-      showMore.fillModal();
-    });
-  }
-};
+}
+const setupShowMoreBtns = () => document.querySelectorAll('a.show-more').forEach(btn => new ShowMore(btn))

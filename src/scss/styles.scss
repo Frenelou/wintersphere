@@ -1,3 +1,41 @@
+body{font-size: 14px;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.header__top-nav .btn-group > .dropdown > button,
+.nav-tabs {
+  font-weight: 600;
+  font-family: "brandon-grotesque", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+h3,
+h4,
+.h3,
+.h4 {
+  letter-spacing: 0.14rem;
+}
+h5,
+h6,
+.h5,
+.h6 {
+  letter-spacing: 0.1rem;
+}
+.btn {
+  font-family: "brandon-grotesque", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+}
 @import 'helpers';
 @import 'typo';
 @import 'hero';

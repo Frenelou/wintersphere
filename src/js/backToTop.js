@@ -2,13 +2,13 @@ class BackToTopButton {
   constructor(btn) {
     this.state = {
       btn: btn,
-      offset: 300,      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-      offset_opacity: 1200,      //duration of the top scrolling animation (in ms)
+      offset: 300, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+      offset_opacity: 1200, //duration of the top scrolling animation (in ms)
       scroll_top_duration: 700,
     }
     this.init();
   }
-  init = ({ btn } = this.state) => {
+  init = () => {
     this.handleScroll();
     this.handleClick();
   }
@@ -17,7 +17,7 @@ class BackToTopButton {
       let scrollTop = $(e.target).scrollTop();
       scrollTop > offset
         ? btn.classList.add("cd-is-visible")
-        : btn.classList.remove("cd-is-visible").remove("cd-fade-out");
+        : btn.classList.remove("cd-is-visible", "cd-fade-out");
       if (scrollTop > offset_opacity) btn.classList.add("cd-fade-out");
     });
   }
