@@ -7,10 +7,11 @@ var gulp = require("gulp"),
   cache = require("gulp-cache"),
   autoprefixer = require("gulp-autoprefixer"),
   mustache = require("gulp-mustache"),
+  babel = require('gulp-babel'),
   yargs = require("yargs"),
   fs = require("fs"),
   argv = require("yargs").argv,
-  ressourcesPath = "https://assets.scott-sports.com/pages/wintersphere_2019/";
+  ressourcesPath = "dist/";
 
 gulp.task("reload", function(done) {
   cache.clearAll();
@@ -77,6 +78,7 @@ gulp.task("new", function(done) {
 gulp.task("js", function() {
   return gulp
     .src([
+      'node_modules/babel-polyfill/dist/polyfill.js',
       "src/js/showMore.js",
       "src/js/newsletter.js",
       "src/js/video.js",
@@ -88,22 +90,22 @@ gulp.task("js", function() {
       // "src/js/plugins/jquery.ScrollMagic.js",
       "src/js/scrollMagicAnimation.js",
       "src/js/setup.js"
-    ])
+    ]).pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
     .pipe(concat("scripts.js"))
     .pipe(gulp.dest("dist/js/"));
 });
 
 gulp.task("buildChangePath", function() {
   return gulp
-    .src(["dist/index.mustache", "dist/css/styles.css", "dist/js/scripts.js"])
-    .pipe(replace("../wintersphere-19-mkt-page-02v04-assets/", ressourcesPath))
+    .src(["dist/index.html", "dist/css/styles.css", "dist/js/scripts.js"])
+    // .pipe(replace("../wintersphere-19-mkt-page-02v04-assets/", ressourcesPath))
     .pipe(replace("&#x2F;", "/"))
-    .pipe(replace("wintersphere-19-mkt-page-02v04-assets/", ressourcesPath))
+    // .pipe(replace("wintersphere-19-mkt-page-02v04-assets/", ressourcesPath))
     .pipe(replace("{{> ", "{{> ../src/partials/"))
-    .pipe(gulp.dest("./prod/"));
+    .pipe(gulp.dest("."));
 });
-
-gulp.task("build", gulp.series(["html"], ["buildChangePath"]));
 
 gulp.task("sass", function() {
   return (

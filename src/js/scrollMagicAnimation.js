@@ -1,14 +1,10 @@
 var controller = null;
 var text, products;
-function wintersphereText(e) {
-  text = e.text;
-  products = e.products;
-  scrollMagicWintersphere.localize();
-}
+let prevWidth= 0;
+
 var scrollMagicWintersphere = {
-  prevWidth: 0,
   setup: function () {
-    this.getText();
+    $("#hero_cta h2").fadeIn("slow");
     this.resizeToggle();
   },
   desktopOnlyScenes: function () {
@@ -17,22 +13,6 @@ var scrollMagicWintersphere = {
       this.follow();
       this.video();
     }
-  },
-  scrim: {
-    en: { h2: "Conquer the Elements", placeholder: "Your email Adress" },
-    de: { h2: "Besiege die ELEMENTE", placeholder: "E-mail Adresse" },
-    fr: { h2: "À la conquête des éléments", placeholder: "Adresse email" },
-    it: { h2: "CONQUISTA GLI ELEMENTI", placeholder: "Indirizzi e-mail" },
-    cs: { h2: "S živly nejsou žerty", placeholder: "" }
-  },
-  getText: function () {
-    $("#hero_cta h2").text(this.scrim[currLang].h2 || "Conquer the Elements");
-    $("#hero_cta h2").fadeIn("slow");
-
-    let o = document.createElement("script");
-
-    o.src = `wintersphere-19-mkt-page-02v04-assets/wintersphere_data_${currLang}.json`;
-    document.body.appendChild(o);
   },
   localize: () => {
     document.querySelectorAll("[data-text]").forEach(el => el.innerHTML = text[$(el).data("text")]);
@@ -62,7 +42,7 @@ var scrollMagicWintersphere = {
   },
   fadeTextIn: () =>
     document.querySelectorAll("[data-text], span.fade").forEach(el =>
-      fadeText = new ScrollMagic.Scene({
+      new ScrollMagic.Scene({
         triggerElement: el,
         offset: -200
       }).on("start", () => el.classList.add("show"))
@@ -74,12 +54,13 @@ var scrollMagicWintersphere = {
         scrollMagicWintersphere.universalScenes();
       } else if (
         $(window).width() <= 991 &&
-        this.prevWidth >= $(window).width()
+        prevWidth >= $(window).width()
       ) {
         controller.destroy();
+        
         controller = null;
         scrollMagicWintersphere.universalScenes();
-      } else if (this.prevWidth <= $(window).width()) {
+      } else if (prevWidth <= $(window).width()) {
         scrollMagicWintersphere.desktopOnlyScenes();
       }
     });

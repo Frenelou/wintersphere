@@ -1,0 +1,58 @@
+wintersphereText({
+  "text": {
+    "title": "L’hiver est proche",
+    "subtitle": "Découvrez la nouvelle collection SCOTT Freeride",
+    "p1": "Plébiscité lors de sa première saison, le SCOTT Scrapper 115 est devenu la nouvelle référence des skis freeride.",
+    "p2": "Le design élégant et les couleurs sobres de la veste SCOTT Vertic GTX 3L Stretch dissimulent des fonctionnalités techniques et un confort exceptionnel. Construite avec une membrane en GORE-TEX®, elle saura faire face aux temps hivernaux les plus rigoureux.",
+    "p3": "La SCOTT Superguide est un modèle léger, offrant mobilité et confort pour les montées, mais aussi une stabilité fiable et précise pour les descentes. Le système de marche en levier est simple, résistant et fiable, permettant une grande amplitude de mouvement sans frottement lors de la marche, tout en offrant un transfert d’énergie puissant.",
+    "p4": "Le masque SCOTT Vapor est la dernière nouveauté de la gamme de masques. Sa monture partiellement sans bords a été conçue pour créer la ventilation parfaite à l’intérieur de l’écran, afin d’empêcher la formation de buée.",
+    "p5": "Le SCOTT Patrol E1 22 est le plus petit modèle de notre emblématique famille de sacs à dos avalanche électroniques Patrol E1. Avec un volume réduit mais les mêmes caractéristiques que le modèle 30 litres, ce sac à dos est parfait pour les ascensions rapides ou les sorties d’héliski.",
+    "p6": "Le gilet de protection SCOTT AirFlex Polar est doté de la nouvelle et innovante plaque AirFlex D3O, avec son design exclusif à SCOTT. Bénéficiez d’un confort maximal, d’une ventilation optimale grâce aux trous d’aération placés stratégiquement et de la protection à l’efficacité prouvée de cette plaque. Avec son tissu PolarTec, le gilet de protection SCOTT AirFlex Polar vous maintiendra au chaud dans toutes vos aventures.",
+    "nl_title_subtitle": "INSCRIVEZ-VOUS À NOTRE NEWSLETTER",
+    "nl_subtitle": "PRÊT POUR L’HIVER ? INSCRIVEZ-VOUS POUR RECEVOIR NOS OFFRES, HISTOIRES ET VIDÉOS EXCLUSIVES DIRECTEMENT DANS VOTRE BOÎTE DE RÉCEPTION.",
+    "nl_pp": "J’accepte de recevoir la newsletter SCOTT Wintersports. Dans notre newsletter, vous découvrirez les dernières infos relatives aux questions sportives, à nos produits, à nos offres et à notre société. Vous pouvez vous désabonner de notre newsletter à tout moment. Les informations relatives au contenu, à l’enregistrement de votre inscription, à la distribution via le fournisseur Maropost, aux évaluations statistiques, ainsi que toutes les clauses de non-responsabilité, sont disponibles dans notre <a href=&quot;/company/policy&quot;>Privacy Policy</a>.",
+    "nl_placeholder": "Votre adresse e-mail",
+    "nl_cta": "S’abonner",
+    "nl_email": "e-mail",
+    "nl_country": "pays",
+    "shop_the_look": "Voir le look",
+    "cta_men": "COLLECTION HOMME",
+    "cta_women": "COLLECTION FEMME",
+    "freeride": "FREERIDE",
+    "all_mountain": "ALL MOUNTAIN",
+    "ski_touring": "SKI DE RANDONNÉE",
+    "collections_title": "Découvrez nos collections",
+    "quickview": "Aperçu"
+  },
+  "products": [{
+      "name": "Ski Scrapper 115",
+      "props": ["Déclenchement de virage facilité", "Flottement optimal", "Conçu pour la performance"],
+      "id": "271785"
+    },
+    {
+      "name": "Veste Vertix gtx 3L stretch",
+      "props": ["Tissu GORE-TEX® 3L", "Assez léger pour accéder aux couloirs les plus escarpés", "Inserts en GORE-TEX stretch pour une mobilité améliorée"],
+      "id": "2725395517007"
+    },
+    {
+      "name": "CHAUSSURE DE SKI SUPERGUIDE CARBON",
+      "props": ["Meilleur niveau de flexion en mode ski comme en mode marche", "Système de verrouillage par boucle à cliquet", "Verrouillage automatique en descente"],
+      "id": "272319"
+    },
+    {
+      "name": "Masque Vapor",
+      "props": ["Amplificateur : améliore le contraste et la clarté", "Protection intégrale contre les UV", "Aération révolutionnaire 2.0"],
+      "id": "271810"
+    },
+    {
+      "name": "KIT SAC À DOS SCOTT PATROL E1 22",
+      "props": ["Système SCOTT Alpride Airbag E1", "Parmi les plus légers du marché", "Poids du système complet : 1 280 g"],
+      "id": "272628"
+    },
+    {
+      "name": "GILET DE PROTECTION POUR HOMME AIRFLEX PRO",
+      "props": ["Protection de niveau 1", "Technologie AirFlex avec D3O®", "Tissu Polartec Power Grid"],
+      "id": "271913"
+    },
+  ]
+})

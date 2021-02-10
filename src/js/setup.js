@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  maropostForm.setup();
+  newsletterCTA.setup();
   scrollMagicWintersphere.setup();
   
   setupShowMoreBtns();

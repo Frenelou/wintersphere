@@ -9,7 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-polyfill": "^6.26.0",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-inject-partials": "^1.0.5",
     "gulp-mustache": "^4.1.2"
   },

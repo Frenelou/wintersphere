@@ -1,0 +1,59 @@
+wintersphereText({
+  "text": {
+    "title": "Zima už se hlásí",
+    "subtitle": "Nová freeridová kolekce SCOTT je připravena",
+    "p1": "Vynikající úspěch lyží SCOTT SCRAPPER 115 v první sezóně a ohlasy na ně zapříčinily, že se tento oceněný model stal v oblasti freeski vzorem.",
+    "p2": "Nenápadný design a tlumené barevné kombinace bundy SCOTT Vertic GTX 3L Stretch napovídají o technických vlastnostech a komfortu jen málo. Konstrukce s membránou GORE-TEX ustojí i nejhorší počasí.",
+    "p3": "U obuvi SCOTT Superguide oceníte nízkou hmotnost, flexibilitu a pohodlí při cestě vzhůru, stejně tak jako stabilitu, přesnost a jistotu při sjezdu. Jednoduchý, nicméně odolný a spolehlivý mechanismus na přepínání chůze/jízda je umístěn vzadu. Při chůzi umožňuje maximální rozsah pohybu, při jízdě účinný přenos síly do lyží.",
+    "p4": "Nejnovějším přírůstkem naší kolekce na tuto sezónu se stávají lyžařské brýle SCOTT Vapor. Zcela nový rám, který však zorník nedrží po celém jeho obvodu, byl navržen z důvodu dokonalejšího průtoku vzduchu brýlemi a zabraňuje tak zamlžování zorníku.",
+    "p5": "Lavinový batoh SCOTT Patrol E1 22 je menší verze našeho stěžejního modelu Patrol E1 z řady elektronických lavinových batohů. S menším objemem, ale se stejnými vlastnostmi jako 30litrový se ideálně hodí na rychlé výstupy či heliskiing.",
+    "p6": "Vestový chránič SCOTT AirFlex Polar v našem specifickém designu obsahuje nový inovativní zádový plát AirFlex D3O. Vyzkoušejte, že je chránič mimořádně pohodlný, umožňuje optimální cirkulaci vzduchu díky strategicky umístěným větracím otvorům a prostřednictvím testovaného protinárazového plátu maximálně chrání. V neposlední řadě, v kombinaci s hřejivým materiálem PolarTec, funguje tento chránič páteře také jako  zateplovací vrstva.",
+    "nl_title_subtitle": "PŘIHLASTE SE K ODBĚRU NAŠEHO NEWSLETTERU",
+    "nl_subtitle": "PŘIPRAVENI NA ZIMU? ZAREGISTRUJTE SE, AŤ MÁTE NAŠE EXKLUZÍVNÍ NABÍDKY, ČLÁNKY A VIDEA VŽDY VČAS VE SVÉ E-MAILOVÉ SCHRÁNCE.",
+    "nl_pp": "Souhlasím s odběrem zimního newsletteru SCOTT. Newsletter informuje o sportovních tématech, našich produktech, nabídkách a o naší společnosti. Z odběru se můžete kdykoli odhlásit. Informace o obsahu, přihlašovacích údajích, distribuci prostřednictvím poskytovatele Maropost, statistických vyhodnoceních i o vašich možnostech vyloučení odpovědnosti jsou uvedeny v našich zásadách o ochraně osobních údajů <a href=&quot;/company/policy&quot;>Privacy Policy</a>.",
+    "nl_placeholder": "Vaše e-mailová adresa",
+    "nl_cta": "Zaregistrovat se",
+    "nl_email": "e-mail",
+    "nl_country": "země",
+    "shop_the_look": "Inspirujte se",
+    "cta_men": "PÁNSKÁ KOLEKCE",
+    "cta_women": "DÁMSKÁ KOLEKCE",
+    "freeride": "FREERIDE",
+    "all_mountain": "ALL MOUNTAIN",
+    "ski_touring": "SKITOURING",
+    "collections_title": "Prohlédnout všechny kolekce",
+    "quickview": "Rychlý náhled"
+
+  },
+  "products": [{
+      "name": "lyže Scrapper 115",
+      "props": ["Snadné zahájení oblouku", "V prašanu optimálně „plují“", "Optimalizované, výkonnější"],
+      "id": "271785"
+    },
+    {
+      "name": "Bunda Vertix gtx 3L",
+      "props": ["Třívrstvé materiály GORE-TEX®", "Nízká hmotnost - lehce i do nejprudších kuloárů", "Vsadky z pružného GORE-TEXu zvyšují volnost pohybu"],
+      "id": "2725395517007"
+    },
+    {
+      "name": "LYŽAŘSKÁ SKITOURINGOVÁ OBUV SCOTT SUPERGUIDE CARBON",
+      "props": ["Lepší flexe při chůzi i jízdě", "Zapínání na přezku s ozubeným páskem", "Automatická aretace komínu po přepnutí na jízdu"],
+      "id": "272319"
+    },
+    {
+      "name": "brýle vapor",
+      "props": ["Zorník Amplifier: zvyšuje kontrast a jas", "100% ochrana před UV zářením", "Systém odvětrání RAM 2.0 - Revolutionary Air Management"],
+      "id": "271810"
+    },
+    {
+      "name": "LAVINOVÝ BATOH SCOTT E1 22 KIT",
+      "props": ["Airbagový systém SCOTT Alpride E1", "Jeden z nejlehčích na trhu", "Celková hmotnost systému 1280 g"],
+      "id": "272628"
+    },
+    {
+      "name": "VESTOVÝ CHRÁNIČ PÁTEŘE AIRFLEX PRO",
+      "props": ["Ochrana úrovně 1", "Technologie AirFlex s D3O®", "Materiál Polartec Powergrid"],
+      "id": "271913"
+    },
+  ]
+})
